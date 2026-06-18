@@ -10,7 +10,7 @@
         tools:targetApi="n_mr1">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="io.github.hidroh.materialistic.debug"
+            android:targetPackage="io.github.mxmilkiib.materialistic.debug"
             android:targetClass="io.github.hidroh.materialistic.ListActivity" />
     </shortcut>
     <shortcut
@@ -21,7 +21,7 @@
         tools:targetApi="n_mr1">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="io.github.hidroh.materialistic.debug"
+            android:targetPackage="io.github.mxmilkiib.materialistic.debug"
             android:targetClass="io.github.hidroh.materialistic.NewActivity" />
     </shortcut>
     <shortcut
@@ -32,7 +32,7 @@
         tools:targetApi="n_mr1">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="io.github.hidroh.materialistic.debug"
+            android:targetPackage="io.github.mxmilkiib.materialistic.debug"
             android:targetClass="io.github.hidroh.materialistic.FavoriteActivity" />
     </shortcut>
     <shortcut
@@ -43,7 +43,7 @@
         tools:targetApi="n_mr1">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="io.github.hidroh.materialistic.debug"
+            android:targetPackage="io.github.mxmilkiib.materialistic.debug"
             android:targetClass="io.github.hidroh.materialistic.SubmitActivity" />
     </shortcut>
 </shortcuts>

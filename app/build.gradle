@@ -6,11 +6,11 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "io.github.hidroh.materialistic"
+        applicationId "io.github.mxmilkiib.materialistic"
         minSdkVersion 21
         targetSdkVersion 34
         versionCode 79
-        versionName "3.3"
+        versionName "3.4-wip"
         buildConfigField "int", "LATEST_RELEASE", "79"
         buildConfigField "String", "GITHUB_TOKEN", "\"\""
         buildConfigField "String", "MERCURY_TOKEN", "\"\""
