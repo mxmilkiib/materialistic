@@ -39,6 +39,12 @@ public abstract class ThemedActivity extends AppCompatActivity {
         Preferences.Theme.apply(this, isDialogTheme(), isTranslucent());
         super.onCreate(savedInstanceState);
         overridePendingTransition(0, 0);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setEnterTransition(null);
+            getWindow().setExitTransition(null);
+            getWindow().setReturnTransition(null);
+            getWindow().setReenterTransition(null);
+        }
         setTaskTitle(getTitle());
         mMenuTintDelegate.onActivityCreated(this);
     }
