@@ -17,6 +17,7 @@
 package io.github.hidroh.materialistic.widget;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
@@ -33,6 +34,7 @@ import android.text.style.RelativeSizeSpan;
 import android.text.style.SuperscriptSpan;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.Checkable;
 import android.widget.RelativeLayout;
@@ -42,6 +44,7 @@ import android.widget.ViewSwitcher;
 import java.util.Locale;
 
 import io.github.hidroh.materialistic.AppUtils;
+import io.github.hidroh.materialistic.Preferences;
 import io.github.hidroh.materialistic.R;
 import io.github.hidroh.materialistic.annotation.Synthetic;
 import io.github.hidroh.materialistic.data.Item;
@@ -119,6 +122,50 @@ public class StoryView extends RelativeLayout implements Checkable {
                 R.attr.selectableItemBackground));
         ta.recycle();
         a.recycle();
+        applyCompactMode();
+    }
+
+    private void applyCompactMode() {
+        if (mIsLocal || !Preferences.isListItemCompact(getContext())) {
+            return;
+        }
+        Resources res = getResources();
+        int columnWidth = res.getDimensionPixelSize(R.dimen.cardview_compact_min_height);
+        int verticalPadding = res.getDimensionPixelSize(R.dimen.padding_compact);
+        float compactTitleSize = res.getDimension(R.dimen.text_size_compact_title);
+        float compactSubtitleSize = res.getDimension(R.dimen.text_size_compact_subtitle);
+        setViewWidth(mVoteSwitcher, columnWidth);
+        setViewWidth(mScoreTextView, columnWidth);
+        setViewWidth(findViewById(R.id.score_filler), columnWidth);
+        setMarginStart(mTitleTextView, columnWidth);
+        setMarginStart(mSourceTextView, columnWidth);
+        setMarginStart(mPostedTextView, columnWidth);
+        mTitleTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactTitleSize);
+        mSourceTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactSubtitleSize);
+        mPostedTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactSubtitleSize);
+        mTitleTextView.setPadding(mTitleTextView.getPaddingLeft(), verticalPadding,
+                mTitleTextView.getPaddingRight(), verticalPadding);
+        mPostedTextView.setPadding(mPostedTextView.getPaddingLeft(), verticalPadding,
+                mPostedTextView.getPaddingRight(), verticalPadding);
+    }
+
+    private static void setViewWidth(View view, int width) {
+        if (view == null) {
+            return;
+        }
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        params.width = width;
+        view.setLayoutParams(params);
+    }
+
+    private static void setMarginStart(View view, int margin) {
+        if (view == null || !(view.getLayoutParams() instanceof RelativeLayout.LayoutParams)) {
+            return;
+        }
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
+        params.leftMargin = margin;
+        params.setMarginStart(margin);
+        view.setLayoutParams(params);
     }
 
     @Override
