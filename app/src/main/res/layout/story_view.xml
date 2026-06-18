@@ -62,7 +62,12 @@
         android:layout_marginStart="@dimen/cardview_min_height"
         android:layout_toLeftOf="@id/comment"
         android:paddingBottom="@dimen/padding"
-        android:maxLines="1" />
+        android:maxLines="1"/>
+
+    <View
+        android:id="@+id/score_filler"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
 
     <include
         layout="@layout/button_comment"
@@ -128,17 +133,11 @@
         android:maxLines="1"
         android:ellipsize="none"
         android:background="?attr/colorCardHighlight"
-        android:gravity="center"
+        android:gravity="center|top"
         android:layout_gravity="center"
         android:layout_below="@id/vote_switcher"
+        android:layout_alignBottom="@id/posted"
         android:layout_width="@dimen/cardview_min_height"
-        android:layout_height="wrap_content"/>
-
-    <View
-        android:id="@+id/score_filler"
-        android:background="?attr/colorCardHighlight"
-        android:layout_below="@id/score"
-        android:layout_width="@dimen/cardview_min_height"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"/>
 
 </merge>

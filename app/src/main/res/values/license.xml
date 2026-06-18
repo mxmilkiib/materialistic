@@ -32,23 +32,33 @@
     </string>
     <string translatable="false" name="libraries_text">
         <![CDATA[
-            <p><a href="https://github.com/square/retrofit">Square Retrofit</a> - Apache License v2.0</p>
-            <p><a href="https://github.com/square/okhttp">Square OkHttp</a> - Apache License v2.0</p>
-            <p><a href="https://github.com/square/dagger">Square Dagger</a> - Apache License v2.0</p>
-            <p><a href="https://github.com/square/leakcanary">Square LeakCanary</a> - Apache License v2.0</p>
-            <p><a href="https://github.com/ReactiveX/RxJava">RxJava</a> - Apache License v2.0</p>
-            <p><a href="https://github.com/ReactiveX/RxAndroid">RxAndroid</a> - Apache License v2.0</p>
-            <p><a href="https://developer.android.com/jetpack">Android Jetpack</a> - Apache License v2.0</p>
-            <p><a href="https://github.com/algolia/hn-search">algolia/hn-search</a> - MIT License</p>
-            <p><a href="https://mercury.postlight.com/web-parser/">Mercury Web Parser API</a></p>
-            <p><a href="https://github.com/mozilla/pdf.js">PDF.js</a> - Apache License v2.0</p>
-            <p><a href="https://github.com/google/material-design-icons">Material design icons</a> - Creative Common Attribution 4.0 International License</p>
-            <p><a href="https://github.com/google/fonts">Google Fonts</a></p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Droid Sans - Apache License v2.0</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Droid Serif - Apache License v2.0</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Libre Baskerville - OFL License v1.1</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Roboto Slab - Apache License v2.0</p>
-            <p>Ad servers list by <a href="https://pgl.yoyo.org/as/">pgl.yoyo.org</a></p>
+            <ul style="padding-left:1.2em;margin-top:2px">
+                <li><a href="https://github.com/square/retrofit">Square Retrofit</a> &#8212; Apache 2.0</li>
+                <li><a href="https://github.com/square/okhttp">Square OkHttp</a> &#8212; Apache 2.0</li>
+                <li><a href="https://github.com/square/dagger">Square Dagger</a> &#8212; Apache 2.0</li>
+                <li><a href="https://github.com/square/leakcanary">Square LeakCanary</a> &#8212; Apache 2.0</li>
+                <li><a href="https://github.com/ReactiveX/RxJava">RxJava</a> &#8212; Apache 2.0</li>
+                <li><a href="https://github.com/ReactiveX/RxAndroid">RxAndroid</a> &#8212; Apache 2.0</li>
+                <li><a href="https://developer.android.com/jetpack">Android Jetpack</a> &#8212; Apache 2.0</li>
+                <li><a href="https://github.com/algolia/hn-search">algolia/hn-search</a> &#8212; MIT</li>
+                <li><a href="https://mercury.postlight.com/web-parser/">Mercury Web Parser API</a></li>
+                <li><a href="https://github.com/mozilla/pdf.js">PDF.js</a> &#8212; Apache 2.0</li>
+                <li><a href="https://github.com/google/material-design-icons">Material design icons</a> &#8212; CC-BY 4.0</li>
+                <li>Fonts:
+                    <ul style="padding-left:1em;margin-top:2px">
+                        <li>Droid Sans / Droid Serif &#8212; Apache 2.0</li>
+                        <li>Libre Baskerville &#8212; OFL 1.1</li>
+                        <li>Roboto Slab &#8212; Apache 2.0</li>
+                        <li><a href="https://github.com/ryanoasis/nerd-fonts">Hack Nerd Font</a> &#8212; MIT / OFL 1.1</li>
+                        <li><a href="https://rsms.me/inter/">Inter</a> &#8212; OFL 1.1</li>
+                        <li><a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a> &#8212; OFL 1.1</li>
+                        <li><a href="https://github.com/tonsky/FiraCode">Fira Code</a> &#8212; OFL 1.1</li>
+                        <li>Terminus &#8212; OFL 1.1</li>
+                        <li>Fixedsys Excelsior &#8212; Public Domain</li>
+                    </ul>
+                </li>
+                <li>Ad servers list by <a href="https://pgl.yoyo.org/as/">pgl.yoyo.org</a></li>
+            </ul>
         ]]>
     </string>
     <string translatable="false" name="third_party_licenses_text" tools:ignore="TypographyOther">
