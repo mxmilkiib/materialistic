@@ -17,7 +17,7 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="app_name">Materialistic</string>
+    <string name="app_name">Material Hack</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_list">Top Stories</string>
     <string name="title_activity_best">Best Stories</string>
@@ -100,6 +100,8 @@
     <string name="pref_ad_block_summary">Enable simple ad blocker for internal browser</string>
     <string name="pref_line_height_title">Line spacing</string>
     <string name="pref_list_item_view_title">Show as cards</string>
+    <string name="pref_list_compact_title">Compact list spacing</string>
+    <string name="pref_list_compact_summary">Tighter rows and a narrower score column for wider titles</string>
     <string name="pref_thread_indicator_title">Thread indicator</string>
     <string name="pref_widget_section_title">Section</string>
     <string name="pref_widget_query_title">Filter by query (optional)</string>
