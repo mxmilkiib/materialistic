@@ -22,6 +22,10 @@ import android.os.Bundle
 import androidx.annotation.IdRes
 import androidx.appcompat.app.ActionBar
 import android.view.MenuItem
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+import java.util.concurrent.TimeUnit
 
 class AboutActivity : InjectableActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +48,16 @@ class AboutActivity : InjectableActivity() {
     findViewById<android.widget.Button>(R.id.btn_whats_new).setOnClickListener {
       startActivity(Intent(this, ReleaseNotesActivity::class.java))
     }
-    setTextWithLinks(R.id.text_application_info, getString(R.string.application_info_text, versionName, versionCode))
+    val buildDate = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US).format(Date(BuildConfig.BUILD_TIME))
+    val ageMins = TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - BuildConfig.BUILD_TIME)
+    val ageStr = when {
+      ageMins < 60 -> "${ageMins}m ago"
+      ageMins < 1440 -> "${ageMins / 60}h ago"
+      else -> "${ageMins / 1440}d ago"
+    }
+    val gitCommit = BuildConfig.GIT_COMMIT
+    setTextWithLinks(R.id.text_application_info,
+      getString(R.string.application_info_text, versionName, versionCode, buildDate, ageStr, gitCommit))
     setTextWithLinks(R.id.text_developer_info, getString(R.string.developer_info_text))
     setTextWithLinks(R.id.text_libraries, getString(R.string.libraries_text))
     setTextWithLinks(R.id.text_license, getString(R.string.license_text))

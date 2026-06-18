@@ -14,6 +14,8 @@ android {
         buildConfigField "int", "LATEST_RELEASE", "79"
         buildConfigField "String", "GITHUB_TOKEN", "\"\""
         buildConfigField "String", "MERCURY_TOKEN", "\"\""
+        buildConfigField "long", "BUILD_TIME", System.currentTimeMillis() + "L"
+        buildConfigField "String", "GIT_COMMIT", "\"" + ("git rev-parse --short HEAD".execute().text.trim()) + "\""
         proguardFiles getDefaultProguardFile('proguard-android.txt'),
                 'proguard-rules.pro',
                 'proguard-square.pro',

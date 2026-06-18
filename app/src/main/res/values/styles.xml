@@ -143,20 +143,22 @@
     <style name="DrawerTextStyle">
         <item name="android:textAppearance">@style/TextAppearance.App.Large</item>
         <item name="android:paddingLeft">16dp</item>
-        <item name="android:paddingTop">@dimen/padding_text</item>
-        <item name="android:paddingBottom">@dimen/padding_text</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
         <item name="android:paddingRight">16dp</item>
         <item name="android:drawablePadding">32dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:background">?attr/selectableItemBackground</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">?android:attr/listPreferredItemHeight</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">40dp</item>
     </style>
 
     <style name="HeadlineTextStyle">
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Headline</item>
-        <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingBottom">@dimen/padding</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">2dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>

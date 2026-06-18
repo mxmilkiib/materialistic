@@ -35,21 +35,22 @@
     <string name="application_info_title">Application Info</string>
     <string name="application_info_text">
         <![CDATA[
-            Version: %1$s (%2$d)<br>
+            Version %1$s (build %2$d)<br>
+            Built %3$s &#8226; %4$s &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br><br>
             <b>Material Hack</b> is a fork of Materialistic by Ha Duy Trung.<br><br>
-            <b>Refreshments:</b>
-            <ul style="margin-top:2px;margin-bottom:4px;padding-left:1.2em">
-                <li>Modernised build toolchain (Gradle 8, AGP 8.5, Kotlin 1.9, targetSdk 34)</li>
+            <b>Changes:</b>
+            <ul>
+                <li>Modernised toolchain: Gradle 8, AGP 8.5, Kotlin 1.9, targetSdk 34</li>
                 <li>New themes: Violet, Ocean, Rose, Monokai, Nord</li>
                 <li>Compact list mode with smaller fonts and tighter spacing</li>
-                <li>Additional fonts: Hack Nerd Font, Inter, JetBrains Mono, Fira Code, Terminus, Fixedsys</li>
-                <li>Bold app title and flattened navigation drawer</li>
-                <li>Tighter spacing throughout (header, comments, list items)</li>
+                <li>New fonts: Hack Nerd Font, Inter, JetBrains Mono, Fira Code, Terminus, Fixedsys</li>
+                <li>Flattened navigation drawer, all sections in root</li>
+                <li>Tighter spacing throughout</li>
                 <li>Transparent overscroll glow</li>
                 <li>Side-by-side debug install support</li>
             </ul>
-            Fork: <a href="https://github.com/mxmilkiib/material-hack">github.com/mxmilkiib/material-hack</a><br>
-            Original: <a href="https://github.com/hidroh/materialistic">github.com/hidroh/materialistic</a>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
         ]]>
     </string>
     <string name="libraries_title">Libraries &amp; Resources</string>

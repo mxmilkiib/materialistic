@@ -31,10 +31,6 @@ class ReleaseNotesActivity : InjectableActivity() {
     supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
     setContentView(R.layout.activity_release)
     findViewById<View>(R.id.button_ok).setOnClickListener { _ -> finish() }
-    findViewById<View>(R.id.button_rate).setOnClickListener { _ ->
-      AppUtils.openPlayStore(this)
-      finish()
-    }
     with(findViewById<WebView>(R.id.web_view)) {
       webViewClient = WebViewClient()
       webChromeClient = WebChromeClient()
