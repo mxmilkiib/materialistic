@@ -36,6 +36,7 @@
         <item name="android:textColorLink">?colorAccent</item>
         <item name="android:colorEdgeEffect">@color/edgeEffectGrey</item>
         <item name="colorControlHighlight">#1F000000</item>
+        <item name="android:colorControlHighlight">#1F000000</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="actionModeBackground">?colorPrimary</item>
         <item name="alertDialogTheme">@style/AppAlertDialog</item>
@@ -67,6 +68,7 @@
         <item name="android:textColorLink">?colorAccent</item>
         <item name="android:colorEdgeEffect">@color/edgeEffectGrey</item>
         <item name="colorControlHighlight">#1FFFFFFF</item>
+        <item name="android:colorControlHighlight">#1FFFFFFF</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="actionModeBackground">?colorPrimary</item>
         <item name="alertDialogTheme">@style/AppAlertDialog.Dark</item>
@@ -88,6 +90,8 @@
         <item name="android:textColorTertiary">?android:textColorPrimary</item>
         <item name="android:textColorLink">?colorAccent</item>
         <item name="android:colorEdgeEffect">@color/edgeEffectGrey</item>
+        <item name="colorControlHighlight">#1F000000</item>
+        <item name="android:colorControlHighlight">#1F000000</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="actionModeBackground">?colorPrimary</item>
         <item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>

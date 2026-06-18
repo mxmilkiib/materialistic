@@ -83,34 +83,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <ViewSwitcher
-        android:id="@+id/vote_switcher"
+    <LinearLayout
+        android:id="@+id/score_column"
+        android:orientation="vertical"
+        android:gravity="center"
         android:background="?attr/colorCardHighlight"
-        android:inAnimation="@anim/slide_in_up"
-        android:outAnimation="@anim/slide_out_down"
         android:layout_alignTop="@id/title"
+        android:layout_alignBottom="@id/posted"
         android:layout_width="@dimen/cardview_min_height"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp">
+
+        <ViewSwitcher
+            android:id="@+id/vote_switcher"
+            android:inAnimation="@anim/slide_in_up"
+            android:outAnimation="@anim/slide_out_down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@id/rank"
+                android:text="46"
+                style="@style/textRankStyle"
+                android:layout_gravity="center"
+                android:ellipsize="none"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:src="@drawable/ic_thumb_up_white_24dp"
+                android:contentDescription="@string/voted"
+                app:tint="@color/greenA700"
+                android:layout_gravity="bottom|center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </ViewSwitcher>
 
         <TextView
-            android:id="@id/rank"
-            android:text="46"
-            style="@style/textRankStyle"
-            android:layout_gravity="center"
-            android:ellipsize="none"
+            android:id="@id/score"
+            android:text="128 pts"
+            style="@style/textSubtitleStyle"
             android:maxLines="1"
+            android:ellipsize="none"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <ImageView
-            android:src="@drawable/ic_thumb_up_white_24dp"
-            android:contentDescription="@string/voted"
-            app:tint="@color/greenA700"
-            android:layout_gravity="bottom|center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </ViewSwitcher>
+    </LinearLayout>
 
     <ImageView
         android:id="@id/bookmarked"
@@ -121,18 +141,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:tint="@color/orange400" />
-
-    <TextView
-        android:id="@id/score"
-        android:text="128 pts"
-        style="@style/textSubtitleStyle"
-        android:maxLines="1"
-        android:ellipsize="none"
-        android:background="?attr/colorCardHighlight"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_below="@id/vote_switcher"
-        android:layout_width="@dimen/cardview_min_height"
-        android:layout_height="wrap_content"/>
 
 </merge>

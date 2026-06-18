@@ -137,8 +137,7 @@ public class StoryView extends RelativeLayout implements Checkable {
         float compactSubtitleSize = res.getDimension(R.dimen.text_size_compact_subtitle);
         float compactRankSize = res.getDimension(R.dimen.text_size_compact_rank);
         float compactScoreSize = res.getDimension(R.dimen.text_size_compact_score);
-        setViewWidth(mVoteSwitcher, columnWidth);
-        setViewWidth(mScoreTextView, columnWidth);
+        setViewWidth(findViewById(R.id.score_column), columnWidth);
         setMarginStart(mTitleTextView, columnWidth);
         setMarginStart(mSourceTextView, columnWidth);
         setMarginStart(mPostedTextView, columnWidth);
