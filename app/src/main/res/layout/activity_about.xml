@@ -51,7 +51,7 @@
             <TextView
                 android:id="@id/text_application_info"
                 style="@style/textContentStyle"
-                android:paddingLeft="16dp"
+                android:paddingLeft="24dp"
                 android:paddingRight="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -61,7 +61,7 @@
             <TextView
                 android:id="@id/text_developer_info"
                 style="@style/textContentStyle"
-                android:paddingLeft="16dp"
+                android:paddingLeft="24dp"
                 android:paddingRight="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -71,7 +71,7 @@
             <TextView
                 android:id="@id/text_libraries"
                 style="@style/textContentStyle"
-                android:paddingLeft="16dp"
+                android:paddingLeft="24dp"
                 android:paddingRight="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -81,7 +81,7 @@
             <TextView
                 android:id="@id/text_license"
                 style="@style/textContentStyle"
-                android:paddingLeft="16dp"
+                android:paddingLeft="24dp"
                 android:paddingRight="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -91,7 +91,7 @@
             <TextView
                 android:id="@id/text_3rd_party_licenses"
                 style="@style/textContentStyle"
-                android:paddingLeft="16dp"
+                android:paddingLeft="24dp"
                 android:paddingRight="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -101,7 +101,7 @@
             <TextView
                 android:id="@id/text_privacy_policy"
                 style="@style/textContentStyle"
-                android:paddingLeft="16dp"
+                android:paddingLeft="24dp"
                 android:paddingRight="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

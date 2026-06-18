@@ -103,6 +103,7 @@
 
     <style name="textContentStyle">
         <item name="android:textAppearance">@style/TextAppearance.App.Small</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
     </style>
 
     <style name="textEmptyStyle">

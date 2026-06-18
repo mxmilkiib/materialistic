@@ -32,33 +32,28 @@
     </string>
     <string translatable="false" name="libraries_text">
         <![CDATA[
-            <ul style="padding-left:1.2em;margin-top:2px">
-                <li><a href="https://github.com/square/retrofit">Square Retrofit</a> &#8212; Apache 2.0</li>
-                <li><a href="https://github.com/square/okhttp">Square OkHttp</a> &#8212; Apache 2.0</li>
-                <li><a href="https://github.com/square/dagger">Square Dagger</a> &#8212; Apache 2.0</li>
-                <li><a href="https://github.com/square/leakcanary">Square LeakCanary</a> &#8212; Apache 2.0</li>
-                <li><a href="https://github.com/ReactiveX/RxJava">RxJava</a> &#8212; Apache 2.0</li>
-                <li><a href="https://github.com/ReactiveX/RxAndroid">RxAndroid</a> &#8212; Apache 2.0</li>
-                <li><a href="https://developer.android.com/jetpack">Android Jetpack</a> &#8212; Apache 2.0</li>
-                <li><a href="https://github.com/algolia/hn-search">algolia/hn-search</a> &#8212; MIT</li>
-                <li><a href="https://mercury.postlight.com/web-parser/">Mercury Web Parser API</a></li>
-                <li><a href="https://github.com/mozilla/pdf.js">PDF.js</a> &#8212; Apache 2.0</li>
-                <li><a href="https://github.com/google/material-design-icons">Material design icons</a> &#8212; CC-BY 4.0</li>
-                <li>Fonts:
-                    <ul style="padding-left:1em;margin-top:2px">
-                        <li>Droid Sans / Droid Serif &#8212; Apache 2.0</li>
-                        <li>Libre Baskerville &#8212; OFL 1.1</li>
-                        <li>Roboto Slab &#8212; Apache 2.0</li>
-                        <li><a href="https://github.com/ryanoasis/nerd-fonts">Hack Nerd Font</a> &#8212; MIT / OFL 1.1</li>
-                        <li><a href="https://rsms.me/inter/">Inter</a> &#8212; OFL 1.1</li>
-                        <li><a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a> &#8212; OFL 1.1</li>
-                        <li><a href="https://github.com/tonsky/FiraCode">Fira Code</a> &#8212; OFL 1.1</li>
-                        <li>Terminus &#8212; OFL 1.1</li>
-                        <li>Fixedsys Excelsior &#8212; Public Domain</li>
-                    </ul>
-                </li>
-                <li>Ad servers list by <a href="https://pgl.yoyo.org/as/">pgl.yoyo.org</a></li>
-            </ul>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://github.com/square/retrofit">Square Retrofit</a> &#8212; Apache 2.0<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://github.com/square/okhttp">Square OkHttp</a> &#8212; Apache 2.0<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://github.com/square/dagger">Square Dagger</a> &#8212; Apache 2.0<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://github.com/square/leakcanary">Square LeakCanary</a> &#8212; Apache 2.0<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://github.com/ReactiveX/RxJava">RxJava</a> &#8212; Apache 2.0<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://github.com/ReactiveX/RxAndroid">RxAndroid</a> &#8212; Apache 2.0<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://developer.android.com/jetpack">Android Jetpack</a> &#8212; Apache 2.0<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://github.com/algolia/hn-search">algolia/hn-search</a> &#8212; MIT<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://mercury.postlight.com/web-parser/">Mercury Web Parser API</a><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://github.com/mozilla/pdf.js">PDF.js</a> &#8212; Apache 2.0<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://github.com/google/material-design-icons">Material design icons</a> &#8212; CC-BY 4.0<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fonts:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Droid Sans / Droid Serif &#8212; Apache 2.0<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Libre Baskerville &#8212; OFL 1.1<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Roboto Slab &#8212; Apache 2.0<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://github.com/ryanoasis/nerd-fonts">Hack Nerd Font</a> &#8212; MIT / OFL 1.1<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://rsms.me/inter/">Inter</a> &#8212; OFL 1.1<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a> &#8212; OFL 1.1<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; <a href="https://github.com/tonsky/FiraCode">Fira Code</a> &#8212; OFL 1.1<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus &#8212; OFL 1.1<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys Excelsior &#8212; Public Domain<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Ad servers list by <a href="https://pgl.yoyo.org/as/">pgl.yoyo.org</a><br>
         ]]>
     </string>
     <string translatable="false" name="third_party_licenses_text" tools:ignore="TypographyOther">
