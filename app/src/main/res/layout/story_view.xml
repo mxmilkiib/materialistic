@@ -61,7 +61,7 @@
         android:layout_marginLeft="@dimen/cardview_min_height"
         android:layout_marginStart="@dimen/cardview_min_height"
         android:layout_toLeftOf="@id/comment"
-        android:paddingBottom="0dp"
+        android:paddingBottom="@dimen/padding"
         android:maxLines="1" />
 
     <include
@@ -88,7 +88,6 @@
         android:inAnimation="@anim/slide_in_up"
         android:outAnimation="@anim/slide_out_down"
         android:layout_alignTop="@id/title"
-        android:layout_alignBottom="@id/title"
         android:layout_width="@dimen/cardview_min_height"
         android:layout_height="wrap_content">
 
@@ -139,8 +138,7 @@
         android:id="@+id/score_filler"
         android:background="?attr/colorCardHighlight"
         android:layout_below="@id/score"
-        android:layout_alignBottom="@id/posted"
         android:layout_width="@dimen/cardview_min_height"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp" />
 
 </merge>

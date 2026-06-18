@@ -25,6 +25,11 @@
             <a href="https://github.com/hidroh">Github</a> /
             <a href="https://hidroh.github.io">Blog</a>
             </p>
+            <p>
+            mxmilkiib
+            <a href="https://github.com/mxmilkiib">Github</a> —
+            Material Hack fork
+            </p>
         ]]>
     </string>
     <string name="html" translatable="false">
@@ -58,13 +63,29 @@
         <html>
             <head>
                 <style type="text/css">
-                    body { color: #%1$s; }
-                    a {color: #%2$s;}
-                    sup {color: #%2$s; padding-left: 2px; padding-right: 2px;}
-                    ul { padding-left: 1.2em; }
+                    body { color: #%1$s; font-size: 14px; }
+                    a { color: #%2$s; }
+                    sup { color: #%2$s; padding-left: 2px; padding-right: 2px; }
+                    ul { padding-left: 1.4em; margin-top: 4px; }
+                    li { margin-bottom: 4px; }
+                    h3 { margin-bottom: 4px; }
                 </style>
             </head>
             <body>
+                <h3>Material Hack 3.4-wip</h3>
+                <ul>
+                    <li>Updated build toolchain: Gradle 8.7, AGP 8.5.2, Kotlin 1.9, targetSdk 34</li>
+                    <li>Renamed app to <b>Material Hack</b></li>
+                    <li>New themes: Violet, Ocean, Rose, Monokai, Nord</li>
+                    <li>Compact list mode with smaller fonts and tighter spacing</li>
+                    <li>New font options: Hack Nerd Font, Inter, JetBrains Mono, Fira Code, Terminus, Fixedsys</li>
+                    <li>Bold app title in navigation drawer</li>
+                    <li>About menu moved to drawer root level</li>
+                    <li>All section links visible in drawer (no submenu)</li>
+                    <li>Transparent overscroll edge glow</li>
+                    <li>Tighter spacing in item header and comment cards</li>
+                    <li>Side-by-side debug install support</li>
+                </ul>
             </body>
         </html>
         ]]>

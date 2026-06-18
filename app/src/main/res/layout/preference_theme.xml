@@ -76,24 +76,6 @@
                 android:layout_height="wrap_content" />
 
             <io.github.hidroh.materialistic.widget.preference.ThemeView
-                android:id="@+id/theme_dark"
-                android:theme="@style/AppTheme.Dark"
-                android:layout_marginTop="@dimen/margin"
-                android:layout_marginBottom="@dimen/margin"
-                android:layout_marginRight="@dimen/margin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
-                android:id="@+id/theme_black"
-                android:theme="@style/Black"
-                android:layout_marginTop="@dimen/margin"
-                android:layout_marginBottom="@dimen/margin"
-                android:layout_marginRight="@dimen/margin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_sepia"
                 android:theme="@style/Sepia"
                 android:layout_marginTop="@dimen/margin"
@@ -112,8 +94,35 @@
                 android:layout_height="wrap_content" />
 
             <io.github.hidroh.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_rose"
+                android:theme="@style/Rose"
+                android:layout_marginTop="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
+                android:layout_marginRight="@dimen/margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <io.github.hidroh.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_solarized"
                 android:theme="@style/Solarized"
+                android:layout_marginTop="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
+                android:layout_marginRight="@dimen/margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <io.github.hidroh.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_dark"
+                android:theme="@style/AppTheme.Dark"
+                android:layout_marginTop="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
+                android:layout_marginRight="@dimen/margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <io.github.hidroh.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_black"
+                android:theme="@style/Black"
                 android:layout_marginTop="@dimen/margin"
                 android:layout_marginBottom="@dimen/margin"
                 android:layout_marginRight="@dimen/margin"
@@ -141,15 +150,6 @@
             <io.github.hidroh.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_ocean"
                 android:theme="@style/Ocean"
-                android:layout_marginTop="@dimen/margin"
-                android:layout_marginBottom="@dimen/margin"
-                android:layout_marginRight="@dimen/margin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
-                android:id="@+id/theme_rose"
-                android:theme="@style/Rose"
                 android:layout_marginTop="@dimen/margin"
                 android:layout_marginBottom="@dimen/margin"
                 android:layout_marginRight="@dimen/margin"

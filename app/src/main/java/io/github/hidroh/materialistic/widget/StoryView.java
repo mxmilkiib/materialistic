@@ -135,6 +135,8 @@ public class StoryView extends RelativeLayout implements Checkable {
         int titleTopPadding = res.getDimensionPixelSize(R.dimen.padding_text);
         float compactTitleSize = res.getDimension(R.dimen.text_size_compact_title);
         float compactSubtitleSize = res.getDimension(R.dimen.text_size_compact_subtitle);
+        float compactRankSize = res.getDimension(R.dimen.text_size_compact_rank);
+        float compactScoreSize = res.getDimension(R.dimen.text_size_compact_score);
         setViewWidth(mVoteSwitcher, columnWidth);
         setViewWidth(mScoreTextView, columnWidth);
         setViewWidth(findViewById(R.id.score_filler), columnWidth);
@@ -144,6 +146,8 @@ public class StoryView extends RelativeLayout implements Checkable {
         mTitleTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactTitleSize);
         mSourceTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactSubtitleSize);
         mPostedTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactSubtitleSize);
+        mRankTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactRankSize);
+        mScoreTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactScoreSize);
         mTitleTextView.setPadding(mTitleTextView.getPaddingLeft(), titleTopPadding,
                 mTitleTextView.getPaddingRight(), verticalPadding);
         mPostedTextView.setPadding(mPostedTextView.getPaddingLeft(), verticalPadding,
