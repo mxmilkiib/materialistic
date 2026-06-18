@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sync-adapter
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:contentAuthority="io.github.hidroh.materialistic.debug.provider"
+    android:accountType="io.github.hidroh.materialistic.debug"
+    android:userVisible="false"
+    android:supportsUploading="false"
+    android:allowParallelSyncs="false"
+    android:isAlwaysSyncable="true"
+    tools:ignore="UnusedAttribute" />

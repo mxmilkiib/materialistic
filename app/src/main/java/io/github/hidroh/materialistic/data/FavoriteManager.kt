@@ -27,6 +27,7 @@ import androidx.annotation.AnyThread
 import androidx.annotation.WorkerThread
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import io.github.hidroh.materialistic.BuildConfig
 import io.github.hidroh.materialistic.DataModule
 import io.github.hidroh.materialistic.FavoriteActivity
 import io.github.hidroh.materialistic.R
@@ -60,7 +61,7 @@ class FavoriteManager @Inject constructor(
     private const val URI_PATH_CLEAR = "clear"
     private const val PATH_SAVED = "saved"
     private const val FILENAME_EXPORT = "materialistic-export.txt"
-    private const val FILE_AUTHORITY = "io.github.hidroh.materialistic.fileprovider"
+    private val FILE_AUTHORITY = BuildConfig.APPLICATION_ID + ".fileprovider"
 
     fun isAdded(uri: Uri) = uri.toString().startsWith(buildAdded().toString())
 

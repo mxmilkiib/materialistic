@@ -23,8 +23,10 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import io.github.hidroh.materialistic.BuildConfig;
+
 public class SyncContentProvider extends ContentProvider {
-    public static final String PROVIDER_AUTHORITY = "io.github.hidroh.materialistic.syncprovider";
+    public static final String PROVIDER_AUTHORITY = BuildConfig.APPLICATION_ID + ".syncprovider";
 
     @Override
     public boolean onCreate() {
