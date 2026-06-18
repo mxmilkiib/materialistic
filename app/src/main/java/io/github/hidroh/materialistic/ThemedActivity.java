@@ -18,7 +18,6 @@ package io.github.hidroh.materialistic;
 
 import android.app.ActivityManager;
 import android.graphics.BitmapFactory;
-import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.CallSuper;
 import androidx.annotation.Nullable;
@@ -38,22 +37,8 @@ public abstract class ThemedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Preferences.Theme.apply(this, isDialogTheme(), isTranslucent());
         super.onCreate(savedInstanceState);
-        overridePendingTransition(0, 0);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setEnterTransition(null);
-            getWindow().setExitTransition(null);
-            getWindow().setReturnTransition(null);
-            getWindow().setReenterTransition(null);
-        }
         setTaskTitle(getTitle());
         mMenuTintDelegate.onActivityCreated(this);
-    }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public void finish() {
-        super.finish();
-        overridePendingTransition(0, 0);
     }
 
     @Override
