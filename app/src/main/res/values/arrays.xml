@@ -39,6 +39,12 @@
         <item>Droid Serif</item>
         <item>Libre Baskerville</item>
         <item>Roboto Slab</item>
+        <item>Hack Nerd Font</item>
+        <item>Inter</item>
+        <item>JetBrains Mono</item>
+        <item>Fira Code</item>
+        <item>Terminus</item>
+        <item>Fixedsys</item>
     </string-array>
     <string-array name="font_values" translatable="false">
         <item/>
@@ -46,6 +52,12 @@
         <item>DroidSerif.ttf</item>
         <item>LibreBaskerville-Regular.ttf</item>
         <item>RobotoSlab-Regular.ttf</item>
+        <item>HackNerdFont-Regular.ttf</item>
+        <item>Inter-Regular.ttf</item>
+        <item>JetBrainsMono-Regular.ttf</item>
+        <item>FiraCode-Regular.ttf</item>
+        <item>Terminus-Regular.ttf</item>
+        <item>Fixedsys-Regular.ttf</item>
     </string-array>
 
     <!-- Comment display -->
