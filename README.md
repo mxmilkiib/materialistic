@@ -4,10 +4,20 @@ A refreshed [Hacker News] client for Android — a fork of [Materialistic] by Ha
 
 **Source:** https://github.com/mxmilkiib/material-hack
 
+### Screenshots
+
+![Light](https://raw.githubusercontent.com/mxmilkiib/material-hack/master/screenshots/theme_light.png)
+
+![Dark Orange](https://raw.githubusercontent.com/mxmilkiib/material-hack/master/screenshots/theme_darkorange.png)
+
+![Violet](https://raw.githubusercontent.com/mxmilkiib/material-hack/master/screenshots/theme_violet.png)
+
+![Aquamarine](https://raw.githubusercontent.com/mxmilkiib/material-hack/master/screenshots/theme_aquamarine.png)
+
 ### What's different
 
 - **Modernised toolchain** — Gradle 8.7, AGP 8.5.2, Kotlin 1.9.24, compileSdk/targetSdk 34, minSdk 21
-- **New themes** — Violet, Ocean, Rose, Monokai, Nord (alongside the originals)
+- **New themes** — Violet, Ocean, Rose, Monokai, Nord, Crimson, Forest, Midnight, Sand, Dracula, Dark Orange (alongside the originals)
 - **Compact list mode** — tighter spacing, smaller fonts, smaller rank/score column
 - **Extra fonts** — Hack Nerd Font, Inter, JetBrains Mono, Fira Code, Terminus, Fixedsys
 - **Flattened drawer** — all section links in the root, no "More sections" submenu
