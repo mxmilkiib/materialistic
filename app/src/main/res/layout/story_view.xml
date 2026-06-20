@@ -70,9 +70,8 @@
         android:id="@id/comment"
         android:layout_toLeftOf="@+id/button_more"
         android:layout_alignWithParentIfMissing="true"
-        android:layout_alignTop="@id/posted"
+        android:layout_alignTop="@id/source"
         android:layout_alignBottom="@+id/button_more"
-        android:layout_marginTop="-4dp"
         android:layout_width="40dp"
         android:layout_height="wrap_content" />
 
@@ -80,9 +79,8 @@
         layout="@layout/button_more"
         android:id="@id/button_more"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/posted"
+        android:layout_alignTop="@id/source"
         android:layout_alignBottom="@id/posted"
-        android:layout_marginTop="-4dp"
         android:layout_width="40dp"
         android:layout_height="wrap_content"/>
 
