@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024-2026 mxmilkiib
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:minHeight="?attr/listPreferredItemHeight"
+    android:gravity="center_vertical"
+    android:paddingRight="?android:attr/scrollbarSize"
+    android:background="?attr/selectableItemBackground"
+    android:focusable="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="6dip"
+        android:layout_marginTop="6dip">
+
+        <TextView android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="?android:attr/textColorPrimary"
+            android:fadingEdge="horizontal" />
+
+        <TextView android:id="@android:id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@android:id/title"
+            android:layout_alignLeft="@android:id/title"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?android:attr/textColorSecondary"
+            android:maxLines="4" />
+
+    </RelativeLayout>
+
+    <GridLayout
+        android:layout_marginTop="6dip"
+        android:layout_marginBottom="6dip"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="8dip"
+        android:columnCount="4"
+        android:useDefaultMargins="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+            <io.github.mxmilkiib.materialistic.widget.preference.IconView
+                android:id="@+id/app_icon_default"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <io.github.mxmilkiib.materialistic.widget.preference.IconView
+                android:id="@+id/app_icon_purple"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <io.github.mxmilkiib.materialistic.widget.preference.IconView
+                android:id="@+id/app_icon_green"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <io.github.mxmilkiib.materialistic.widget.preference.IconView
+                android:id="@+id/app_icon_blue"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <io.github.mxmilkiib.materialistic.widget.preference.IconView
+                android:id="@+id/app_icon_red"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <io.github.mxmilkiib.materialistic.widget.preference.IconView
+                android:id="@+id/app_icon_teal"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <io.github.mxmilkiib.materialistic.widget.preference.IconView
+                android:id="@+id/app_icon_pink"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <io.github.mxmilkiib.materialistic.widget.preference.IconView
+                android:id="@+id/app_icon_indigo"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+    </GridLayout>
+
+</LinearLayout>

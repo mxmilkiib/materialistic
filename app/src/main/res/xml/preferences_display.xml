@@ -27,12 +27,10 @@
         android:title="@string/pref_theme_title"
         android:defaultValue="light" />
 
-    <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+    <io.github.mxmilkiib.materialistic.preference.AppIconPreference
         android:key="@string/pref_app_icon"
         android:title="@string/pref_app_icon_title"
-        android:defaultValue="@string/pref_app_icon_value_default"
-        app:entries="@array/pref_app_icon_options"
-        app:entryValues="@array/pref_app_icon_values" />
+        android:defaultValue="@string/pref_app_icon_value_default" />
 
     <androidx.preference.SwitchPreferenceCompat
         app:iconSpaceReserved="false"
