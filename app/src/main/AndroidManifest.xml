@@ -39,7 +39,7 @@
     <application
         android:name=".Application"
         android:supportsRtl="false"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:fullBackupContent="@xml/backup"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -382,7 +382,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
         <receiver android:name=".data.ItemSyncWifiReceiver"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action
                     android:name="android.net.conn.CONNECTIVITY_CHANGE"
@@ -391,7 +391,6 @@
         </receiver>
         <receiver
             android:name=".appwidget.WidgetProvider"
-            tools:ignore="ExportedReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="io.github.mxmilkiib.materialistic.ACTION_REFRESH_WIDGET" />
