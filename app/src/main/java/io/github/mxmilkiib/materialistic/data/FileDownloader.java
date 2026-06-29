@@ -32,7 +32,16 @@ public class FileDownloader {
 
     @WorkerThread
     public void downloadFile(String url, String mimeType, FileDownloaderCallback callback) {
-        File outputFile = new File(mCacheDir, new File(url).getName());
+        String fileName = new File(url).getName();
+        File outputFile = new File(mCacheDir, fileName);
+        try {
+            if (!outputFile.getCanonicalPath().startsWith(mCacheDir)) {
+                throw new IOException("Invalid file path");
+            }
+        } catch (IOException e) {
+            mMainHandler.post(() -> callback.onFailure(null, e));
+            return;
+        }
         if (outputFile.exists()) {
             mMainHandler.post(() -> callback.onSuccess(outputFile.getPath()));
             return;
