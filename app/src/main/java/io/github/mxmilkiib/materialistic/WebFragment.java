@@ -245,9 +245,10 @@ public class WebFragment extends LazyLoadFragment
 
     @Override
     public void onDetach() {
+        Context context = getActivity();
         super.onDetach();
-        mPreferenceObservable.unsubscribe(getActivity());
-        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(mReceiver);
+        mPreferenceObservable.unsubscribe(context);
+        LocalBroadcastManager.getInstance(context).unregisterReceiver(mReceiver);
     }
 
     @Override
