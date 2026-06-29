@@ -46,7 +46,6 @@ import android.text.format.DateUtils;
 import android.text.style.ClickableSpan;
 import android.text.style.URLSpan;
 import android.view.ContextThemeWrapper;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
