@@ -83,7 +83,7 @@ public class DataModule {
     }
 
     @Provides @Singleton
-    public UserServices provideUserServices(Call.Factory callFactory,
+    public UserServices provideUserServices(@Named(NetworkModule.NO_REDIRECT) Call.Factory callFactory,
                                             @Named(IO_THREAD) Scheduler ioScheduler) {
         return new UserServicesClient(callFactory, ioScheduler);
     }

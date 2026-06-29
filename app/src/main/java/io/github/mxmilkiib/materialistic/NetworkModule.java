@@ -27,6 +27,7 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 import javax.net.SocketFactory;
 
@@ -48,6 +49,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 
 @Module(library = true, complete = false)
 class NetworkModule {
+    static final String NO_REDIRECT = "noRedirect";
     private static final String TAG_OK_HTTP = "OkHttp";
     private static final long CACHE_SIZE = 20 * 1024 * 1024; // 20 MB
 
@@ -101,6 +103,11 @@ class NetworkModule {
                 .addNetworkInterceptor(new CacheOverrideNetworkInterceptor())
                 .addInterceptor(new ConnectionAwareInterceptor(context))
                 .addInterceptor(new LoggingInterceptor())
+                .build();
+
+    @Provides @Singleton @Named(NO_REDIRECT)
+    public Call.Factory provideNoRedirectCallFactory(Call.Factory callFactory) {
+        return ((OkHttpClient) callFactory).newBuilder()
                 .followRedirects(false)
                 .build();
     }
