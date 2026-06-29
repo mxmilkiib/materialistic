@@ -24,6 +24,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Locale;
@@ -526,7 +527,7 @@ public class Preferences {
     }
 
     public static class Observable {
-        private static Set<String> CONTEXT_KEYS;
+        private static volatile Set<String> CONTEXT_KEYS;
         private final Map<String, Integer> mSubscribedKeys = new HashMap<>();
         private final SharedPreferences.OnSharedPreferenceChangeListener mListener = (sharedPreferences, key) -> {
             if (mSubscribedKeys.containsKey(key)) {
@@ -562,15 +563,16 @@ public class Preferences {
         }
 
         @SuppressLint("UseSparseArrays")
-        private void ensureContextKeys(Context context) {
+        private static synchronized void ensureContextKeys(Context context) {
             if (CONTEXT_KEYS != null) {
                 return;
             }
-            CONTEXT_KEYS = new HashSet<>();
-            CONTEXT_KEYS.add(context.getString(R.string.pref_theme));
-            CONTEXT_KEYS.add(context.getString(R.string.pref_text_size));
-            CONTEXT_KEYS.add(context.getString(R.string.pref_font));
-            CONTEXT_KEYS.add(context.getString(R.string.pref_daynight_auto));
+            Set<String> keys = new HashSet<>();
+            keys.add(context.getString(R.string.pref_theme));
+            keys.add(context.getString(R.string.pref_text_size));
+            keys.add(context.getString(R.string.pref_font));
+            keys.add(context.getString(R.string.pref_daynight_auto));
+            CONTEXT_KEYS = Collections.unmodifiableSet(keys);
         }
     }
 
