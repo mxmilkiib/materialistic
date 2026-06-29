@@ -245,9 +245,10 @@ public class WebFragment extends LazyLoadFragment
 
     @Override
     public void onDetach() {
+        Context context = getActivity();
         super.onDetach();
-        mPreferenceObservable.unsubscribe(getActivity());
-        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(mReceiver);
+        mPreferenceObservable.unsubscribe(context);
+        LocalBroadcastManager.getInstance(context).unregisterReceiver(mReceiver);
     }
 
     @Override
@@ -468,6 +469,9 @@ public class WebFragment extends LazyLoadFragment
     }
 
     private void offerExternalApp() {
+        if (getActivity() == null) {
+            return;
+        }
         final Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mItem.getUrl()));
         if (intent.resolveActivity(getActivity().getPackageManager()) == null) {
             return;
@@ -670,6 +674,13 @@ public class WebFragment extends LazyLoadFragment
         @JavascriptInterface
         public String getChunk(long begin, long end) {
             try {
+                if (begin < 0 || end <= begin) {
+                    return "";
+                }
+                final long fileSize = mFile.length();
+                if (begin >= fileSize || end > fileSize) {
+                    return "";
+                }
                 if (mRandomAccessFile == null) {
                     mRandomAccessFile = new RandomAccessFile(mFile, "r");
                 }

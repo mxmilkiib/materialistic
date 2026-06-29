@@ -27,6 +27,7 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 import javax.net.SocketFactory;
 
@@ -48,8 +49,10 @@ import okhttp3.logging.HttpLoggingInterceptor;
 
 @Module(library = true, complete = false)
 class NetworkModule {
+    static final String NO_REDIRECT = "noRedirect";
     private static final String TAG_OK_HTTP = "OkHttp";
     private static final long CACHE_SIZE = 20 * 1024 * 1024; // 20 MB
+    private static final int TRAFFIC_STATS_TAG = 0x1000;
 
     @Provides @Singleton
     public RestServiceFactory provideRestServiceFactory(Call.Factory callFactory) {
@@ -65,35 +68,35 @@ class NetworkModule {
                     @Override
                     public Socket createSocket() throws IOException {
                         Socket socket = mDefaultFactory.createSocket();
-                        TrafficStats.setThreadStatsTag(1);
+                        TrafficStats.setThreadStatsTag(TRAFFIC_STATS_TAG);
                         return socket;
                     }
 
                     @Override
                     public Socket createSocket(String host, int port) throws IOException {
                         Socket socket = mDefaultFactory.createSocket(host, port);
-                        TrafficStats.setThreadStatsTag(1);
+                        TrafficStats.setThreadStatsTag(TRAFFIC_STATS_TAG);
                         return socket;
                     }
 
                     @Override
                     public Socket createSocket(String host, int port, InetAddress localHost, int localPort) throws IOException {
                         Socket socket = mDefaultFactory.createSocket(host, port, localHost, localPort);
-                        TrafficStats.setThreadStatsTag(1);
+                        TrafficStats.setThreadStatsTag(TRAFFIC_STATS_TAG);
                         return socket;
                     }
 
                     @Override
                     public Socket createSocket(InetAddress host, int port) throws IOException {
                         Socket socket = mDefaultFactory.createSocket(host, port);
-                        TrafficStats.setThreadStatsTag(1);
+                        TrafficStats.setThreadStatsTag(TRAFFIC_STATS_TAG);
                         return socket;
                     }
 
                     @Override
                     public Socket createSocket(InetAddress address, int port, InetAddress localAddress, int localPort) throws IOException {
                         Socket socket = mDefaultFactory.createSocket(address, port, localAddress, localPort);
-                        TrafficStats.setThreadStatsTag(1);
+                        TrafficStats.setThreadStatsTag(TRAFFIC_STATS_TAG);
                         return socket;
                     }
                 })
@@ -101,6 +104,11 @@ class NetworkModule {
                 .addNetworkInterceptor(new CacheOverrideNetworkInterceptor())
                 .addInterceptor(new ConnectionAwareInterceptor(context))
                 .addInterceptor(new LoggingInterceptor())
+                .build();
+
+    @Provides @Singleton @Named(NO_REDIRECT)
+    public Call.Factory provideNoRedirectCallFactory(Call.Factory callFactory) {
+        return ((OkHttpClient) callFactory).newBuilder()
                 .followRedirects(false)
                 .build();
     }
