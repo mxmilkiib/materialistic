@@ -173,9 +173,19 @@ public class CustomTabsDelegate {
                     PackageManager.MATCH_DEFAULT_ONLY);
         }
         for (ResolveInfo info : resolvedActivityList) {
-            if (pm.resolveService(new Intent()
+            Intent serviceIntent = new Intent()
                     .setAction(ACTION_CUSTOM_TABS_CONNECTION)
-                    .setPackage(info.activityInfo.packageName), 0) != null) {
+                    .setPackage(info.activityInfo.packageName);
+            boolean hasService;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                hasService = pm.resolveService(serviceIntent,
+                        PackageManager.ResolveInfoFlags.of(PackageManager.MATCH_DEFAULT_ONLY)) != null;
+            } else {
+                //noinspection deprecation
+                hasService = pm.resolveService(serviceIntent,
+                        PackageManager.MATCH_DEFAULT_ONLY) != null;
+            }
+            if (hasService) {
                 packagesSupportingCustomTabs.add(info.activityInfo.packageName);
             }
         }
