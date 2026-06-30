@@ -129,8 +129,15 @@ public class AppUtils {
             }
             return;
         }
-        List<ResolveInfo> activities = context.getPackageManager()
-                .queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+        PackageManager pm = context.getPackageManager();
+        List<ResolveInfo> activities;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            activities = pm.queryIntentActivities(intent,
+                    PackageManager.ResolveInfoFlags.of(PackageManager.MATCH_DEFAULT_ONLY));
+        } else {
+            //noinspection deprecation
+            activities = pm.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+        }
         ArrayList<Intent> intents = new ArrayList<>();
         for (ResolveInfo info : activities) {
             if (info.activityInfo.packageName.equalsIgnoreCase(context.getPackageName())) {

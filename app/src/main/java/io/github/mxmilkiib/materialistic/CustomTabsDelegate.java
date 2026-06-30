@@ -24,6 +24,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -159,12 +160,19 @@ public class CustomTabsDelegate {
      * @param context Context
      * @return List of all Packages with custom Tabs support
      */
+    @SuppressWarnings("deprecation")
     private static List<String> getBrowsersWithCustomTabsSupport(Context context) {
         List<String> packagesSupportingCustomTabs = new ArrayList<>();
         PackageManager pm = context.getPackageManager();
-        List<ResolveInfo> resolvedActivityList = pm.queryIntentActivities(
-                new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.example.com")), 0);
-        //noinspection Convert2streamapi
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.example.com"));
+        List<ResolveInfo> resolvedActivityList;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            resolvedActivityList = pm.queryIntentActivities(browserIntent,
+                    PackageManager.ResolveInfoFlags.of(PackageManager.MATCH_DEFAULT_ONLY));
+        } else {
+            resolvedActivityList = pm.queryIntentActivities(browserIntent,
+                    PackageManager.MATCH_DEFAULT_ONLY);
+        }
         for (ResolveInfo info : resolvedActivityList) {
             if (pm.resolveService(new Intent()
                     .setAction(ACTION_CUSTOM_TABS_CONNECTION)

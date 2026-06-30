@@ -90,7 +90,7 @@ public class UserActivity extends InjectableActivity implements Scrollable {
         setContentView(R.layout.activity_user);
         findViewById(R.id.touch_outside).setOnClickListener(v -> finish());
         mBottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottom_sheet));
-        mBottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+        mBottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
                 switch (newState) {
@@ -99,7 +99,7 @@ public class UserActivity extends InjectableActivity implements Scrollable {
                         break;
                     case BottomSheetBehavior.STATE_EXPANDED:
                         AppUtils.setStatusBarDim(getWindow(), false);
-                        mRecyclerView.setLayoutFrozen(false);
+                        mRecyclerView.suppressLayout(false);
                         break;
                     case BottomSheetBehavior.STATE_COLLAPSED:
                     case BottomSheetBehavior.STATE_DRAGGING:
@@ -252,7 +252,7 @@ public class UserActivity extends InjectableActivity implements Scrollable {
         mTabLayout.addTab(mTabLayout.newTab()
                 .setText(getResources().getQuantityString(R.plurals.submissions_count, count, count)));
         mRecyclerView.setAdapter(new SubmissionRecyclerViewAdapter(mItemManger, mUser.getItems()));
-        mRecyclerView.setLayoutFrozen(mBottomSheetBehavior.getState() !=
+        mRecyclerView.suppressLayout(mBottomSheetBehavior.getState() !=
                 BottomSheetBehavior.STATE_EXPANDED);
     }
 
