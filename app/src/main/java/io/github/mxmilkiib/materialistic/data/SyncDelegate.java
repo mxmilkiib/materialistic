@@ -124,7 +124,7 @@ public class SyncDelegate {
     }
 
     @UiThread
-    static void scheduleSync(Context context, Job job) {
+    public static void scheduleSync(Context context, Job job) {
         if (!Preferences.Offline.isEnabled(context)) {
             return;
         }

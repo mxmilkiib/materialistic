@@ -19,10 +19,15 @@ package io.github.mxmilkiib.materialistic;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkRequest;
 import android.os.StrictMode;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import io.github.mxmilkiib.materialistic.data.AlgoliaClient;
+import io.github.mxmilkiib.materialistic.data.SyncDelegate;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class Application extends android.app.Application implements Injectable {
@@ -57,6 +62,23 @@ public class Application extends android.app.Application implements Injectable {
         TYPE_FACE = FontCache.getInstance().get(this, Preferences.Theme.getTypeface(this));
         AppUtils.registerAccountsUpdatedListener(this);
         AdBlocker.init(this, Schedulers.io());
+        registerWifiSyncCallback();
+    }
+
+    private void registerWifiSyncCallback() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkRequest request = new NetworkRequest.Builder()
+                .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
+                .build();
+        cm.registerNetworkCallback(request, new ConnectivityManager.NetworkCallback() {
+            @Override
+            public void onCapabilitiesChanged(Network network, NetworkCapabilities capabilities) {
+                if (capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)) {
+                    SyncDelegate.scheduleSync(Application.this,
+                            new SyncDelegate.JobBuilder(Application.this, null).build());
+                }
+            }
+        });
     }
 
     @Override
