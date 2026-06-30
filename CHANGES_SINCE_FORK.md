@@ -89,34 +89,51 @@ Forked from [Materialistic](https://github.com/hidroh/materialistic) at commit `
 - **Card mode left border**: fixed by dynamically setting `cardUseCompatPadding` and resetting margins in `ListRecyclerViewAdapter` based on `cardViewEnabled`
 - **Red ripple flash on DayNight themes**: added `colorControlHighlight` to `BaseAppTheme.DayNight.NoActionBar` and `android:colorControlHighlight` to all base themes
 
-## Files Changed (Uncommitted)
+## Deprecated API Modernization
 
-- `AndroidManifest.xml` — 7 activity-alias entries for alternate icons
-- `AppIconUtils.java` — new file, icon switching logic
-- `Application.java` — removed penaltyFlashScreen
-- `BaseListFragment.java` — uses `list_item_divider` (1dp) with `colorDivider` background
-- `ListRecyclerViewAdapter.java` — dynamic `cardUseCompatPadding` and margin reset for flat/card mode switching
-- `PreferencesActivity.java` — SharedPreferenceChangeListener for icon changes
-- `ThemePreference.java` — registered 5 new themes
-- `attrs.xml` — `colorDivider` theme attribute
-- `button_comment.xml` — `minWidth` reduced to 0dp, zero padding, fixed width 40dp, gravity `center`
-- `button_more.xml` — padding reduced to 2dp, 3dp top/bottom padding, fixed width 40dp, scale removed
-- `drawer.xml` — orange title with shadow, lighter separators, padding
-- `item_header.xml` — colorPrimaryDark background, adjusted padding/margins for title spacing
-- `item_story.xml` — uses `BaseAppCardView` style for flat mode
-- `fragment_list.xml` / `fragment_favorite.xml` — RecyclerView background changed to `colorDivider`
-- `preference_theme.xml` — 5 new ThemeView buttons, reordered
-- `story_view.xml` — score column full-height anchoring, title paddingTop, button margins, flame icon constraints, posted paddingBottom
-- `arrays.xml` — app icon style arrays
-- `colors.xml` — new theme colours, icon background colours, `purple900b`, `grey50`
-- `dimens.xml` — `list_item_divider` (1dp)
-- `ic_launcher_background.xml` — 7 alternate icon background colours
-- `preference_keys.xml` — `pref_app_icon` key
-- `strings.xml` — theme names, app icon option strings
-- `styles.xml` — `BaseAppCardView` style (cardUseCompatPadding=false, elevation=0, cornerRadius=0), drawer text padding
-- `themes.xml` — 5 new theme styles, `colorDivider` for light/dark/night themes, Violet theme deepened
-- `values-night/themes.xml` — `colorDivider` for dark mode (`grey900`)
-- `preferences_display.xml` — app icon style spinner preference
-- `ripple_card.xml` — neutral ripple drawable (removed)
-- `FeedbackClient.java` — feedback API endpoint updated to `mxmilkiib/material-hack`
-- `proguard-rules.pro` — keep rules updated for new package name
+- **`setLayoutFrozen`** replaced with `suppressLayout` in `UserActivity` (API 31+)
+- **`setBottomSheetCallback`** replaced with `addBottomSheetCallback` in `UserActivity` (API 28+)
+- **`queryIntentActivities`** replaced with `PackageManager.ResolveInfoFlags.of(MATCH_DEFAULT_ONLY)` for API 33+ in `AppUtils` and `CustomTabsDelegate`
+- **`resolveActivity`** centralized in `AppUtils.resolveActivity()` helper with API 33 `ResolveInfoFlags` guard; used in `AppUtils.openWebUrlExternal`, `AppUtils.share`, `WebFragment.offerExternalApp`, `CustomTabsDelegate.getDefaultBrowser`
+- **`resolveService`** in `CustomTabsDelegate` gets same `ResolveInfoFlags` guard for API 33+
+- **`getDefaultDisplay().getSize()` / `getMetrics()`** replaced with `WindowManager.getCurrentWindowMetrics()` for API 30+
+- **`Html.fromHtml(String)`** updated to `Html.fromHtml(String, HtmlCompat.FROM_HTML_MODE_COMPACT)` for API 24+
+- **`CONNECTIVITY_ACTION` BroadcastReceiver** (`ItemSyncWifiReceiver`) replaced with `ConnectivityManager.NetworkCallback` registered in `Application.onCreate`; manifest receiver declaration removed
+- **`addJavascriptInterface`** for PDF viewer replaced with `WebViewAssetLoader` + `WebMessagePort`/`postMessage`; `PdfAndroidJavascriptBridge` class replaced with `PdfBridge` using JSON messages; `script.js` rewritten to use `MessageChannel` instead of synchronous JS bridge calls
+- **HTML regex parsing** in `UserServicesClient` (`getInputValue`, `parseLoginError`) replaced with Jsoup CSS selectors and DOM traversal
+- **`Vibrator.vibrate(long)`** replaced with `VibrationEffect` for API 26+ in `NavFloatingActionButton`
+- **`SystemUiHelper`** updated with `WindowInsetsController` path for API 30+, legacy `SystemUiVisibility` kept for API 24-29
+- **`LocalBroadcastManager`** for fullscreen toggling replaced with `FullscreenViewModel` + `LiveData`
+- **`shouldInterceptRequest(WebView, String)`** deprecated override removed from `AdBlockWebViewClient` and `CacheableWebView`
+- **`NetworkModule`** redundant `SocketFactory` field removed
+- **`HttpUrl.parse()`** replaced with `HttpUrl.get()` in `UserServicesClient` (5 call sites)
+- **ProGuard** config updated: `proguard-android-optimize.txt`, removed stale LeakCanary rules and outdated comment
+
+## Architecture and Lifecycle
+
+- **`StoryListViewModel`** added with `CompositeDisposable` + `onCleared()` for RxJava subscription lifecycle management
+- **`FullscreenViewModel`** added with `LiveData<Boolean>` for fullscreen state observation
+- **`ViewModelProvider`** used in `ListFragment` and `WebFragment` for lifecycle-aware state management
+
+## Crash Fixes
+
+- **`AdBlocker.init`**: `Observable.fromCallable(() -> loadFromAssets())` returned `Void` (null), forbidden by RxJava 3.x; `onErrorReturn(throwable -> null)` also returned null. Switched to `Completable.fromAction` since the operation is side-effect-only
+- **`ReadabilityClient.fromNetwork`**: `onErrorReturn(throwable -> null)` returned null, forbidden by RxJava 3.x. Replaced with `onErrorResumeNext(throwable -> Observable.empty())`
+- **`ReadabilityClient.fromCache`**: `Observable.just(mCache.getReadability(itemId))` where `getReadability` returns nullable `String?`. Added null check with `Observable.empty()` fallback
+- **`ReadabilityClient` map operators**: `.map(... ? null : content)` produced null downstream. Changed to emit empty string instead
+- **DI injection ordering in `ListFragment` and `FavoriteFragment`**: `BaseListFragment.onActivityCreated` sets `mCustomTabsDelegate` on the adapter, but injection ran after `super.onActivityCreated`, leaving it null. Moved injection before super call
+- **DI injection ordering in `WebFragment` and `ItemFragment`**: `LazyLoadFragment.eagerLoad()` calls `load()` which uses injected fields (`mReadabilityClient`, `mItemManager`), but injection ran after `super.onActivityCreated`. Moved injection before super call
+- **`ListRecyclerViewAdapter.onBindViewHolder`**: added null guard for `mCustomTabsDelegate` as defensive measure
+
+## Test Coverage
+
+- New `HackerNewsClientTest` with Robolectric for story fetching and item parsing
+- New `StoryListViewModelTest` for ViewModel lifecycle and LiveData observation
+- `UserServicesClientTest` additions for Jsoup-based `getInputValue` and `parseLoginError`
+- All 38 unit tests passing
+
+## Dependencies Added
+
+- `androidx.webkit:webkit:1.11.0` -- `WebViewAssetLoader` for secure asset serving
+- `org.jsoup:jsoup:1.18.1` -- HTML parsing in `UserServicesClient`
+- `androidx.lifecycle:lifecycle-viewmodel-ktx` and `lifecycle-livedata-ktx` -- ViewModel/LiveData
