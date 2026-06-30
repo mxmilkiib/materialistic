@@ -1,8 +1,45 @@
-// It expects PdfAndroidJavascriptBridge to be injected from the Android side
+// Receives a MessagePort from the Android side via window.onmessage,
+// then uses it to request PDF chunks asynchronously
 (function () {
   var pdfViewer;
+  var port;
+  var pendingChunkRequests = {};
 
-  function initializePdfViewer() {
+  window.onmessage = function (event) {
+    if (event.data === 'pdfPort') {
+      port = event.ports[0];
+      port.onmessage = handlePortMessage;
+      requestFileSize();
+    }
+  };
+
+  function handlePortMessage(event) {
+    var msg = JSON.parse(event.data);
+    switch (msg.type) {
+      case 'size':
+        initializePdfViewer(msg.value);
+        break;
+      case 'chunk':
+        var pending = pendingChunkRequests[msg.requestId];
+        if (pending) {
+          delete pendingChunkRequests[msg.requestId];
+          var binaryString = atob(msg.data);
+          var byteArray = stringToBytes(binaryString);
+          pending.onDataRange(byteArray);
+        }
+        break;
+    }
+  }
+
+  function sendToAndroid(obj) {
+    port.postMessage(JSON.stringify(obj));
+  }
+
+  function requestFileSize() {
+    sendToAndroid({ type: 'getSize' });
+  }
+
+  function initializePdfViewer(fileSize) {
     PDFJS.disableAutoFetch = true;
     PDFJS.useOnlyCssZoom = true;
     PDFJS.maxCanvasPixels = 2097152;
@@ -22,8 +59,6 @@
       pdfViewer.currentScaleValue = 2;
     });
 
-    var fileSize = PdfAndroidJavascriptBridge.getSize();
-
     PDFJS.getDocument({
       length: fileSize,
       range: new RangeTransport(fileSize),
@@ -31,10 +66,10 @@
     }).then(function (pdfDocument) {
       pdfViewer.setDocument(pdfDocument);
       pdfLinkService.setDocument(pdfDocument, null);
-      PdfAndroidJavascriptBridge.onLoad();
+      sendToAndroid({ type: 'onLoad' });
     }).catch(function (e) {
       console.error(e);
-      PdfAndroidJavascriptBridge.onFailure();
+      sendToAndroid({ type: 'onFailure' });
     });
   }
 
@@ -45,15 +80,19 @@
 
     var self = this;
     this.length = size;
+    var nextRequestId = 0;
 
     this.requestDataRange = function (begin, end) {
-      var base64string = PdfAndroidJavascriptBridge.getChunk(begin, end);
-      var binaryString = atob(base64string);
-      var byteArray = stringToBytes(binaryString)
-      // Has to be async, otherwise PDF.js will fire an exception
-      setTimeout(function () {
-        self.onDataRange(begin, byteArray);
-      }, 0);
+      var requestId = nextRequestId++;
+      pendingChunkRequests[requestId] = {
+        onDataRange: function (byteArray) {
+          // Has to be async, otherwise PDF.js will fire an exception
+          setTimeout(function () {
+            self.onDataRange(begin, byteArray);
+          }, 0);
+        },
+      };
+      sendToAndroid({ type: 'getChunk', begin: begin, end: end, requestId: requestId });
     };
   };
 
@@ -197,6 +236,4 @@
     viewAreaElement.addEventListener('scroll', debounceScroll, true);
     return state;
   }
-
-  initializePdfViewer();
 }());

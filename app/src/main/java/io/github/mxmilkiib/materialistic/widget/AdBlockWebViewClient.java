@@ -38,7 +38,7 @@ public class AdBlockWebViewClient extends WebViewClient {
 
     @Nullable
     @Override
-    public final WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+    public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
         if (!mAdBlockEnabled) {
             return super.shouldInterceptRequest(view, request);
         }

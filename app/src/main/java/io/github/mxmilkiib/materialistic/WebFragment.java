@@ -37,7 +37,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.webkit.JavascriptInterface;
+import android.webkit.WebMessage;
+import android.webkit.WebMessagePort;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -58,6 +61,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.webkit.WebViewAssetLoader;
 import io.github.mxmilkiib.materialistic.annotation.Synthetic;
 import io.github.mxmilkiib.materialistic.data.FileDownloader;
 import io.github.mxmilkiib.materialistic.data.Item;
@@ -82,7 +86,7 @@ public class WebFragment extends LazyLoadFragment
     private static final String STATE_FULLSCREEN = "state:fullscreen";
     private static final String STATE_CONTENT = "state:content";
     private static final int DEFAULT_PROGRESS = 20;
-    public static final String PDF_LOADER_URL = "file:///android_asset/pdf/index.html";
+    public static final String PDF_LOADER_URL = "https://appassets.androidplatform.net/assets/pdf/index.html";
     private static final String PDF_MIME_TYPE = "application/pdf";
     private static final String TAG = WebFragment.class.getSimpleName();
     @Synthetic WebView mWebView;
@@ -103,6 +107,9 @@ public class WebFragment extends LazyLoadFragment
     private boolean mFullscreen;
     private boolean mIsPdf;
     private FullscreenViewModel mFullscreenViewModel;
+    private WebViewAssetLoader mAssetLoader;
+    private PdfBridge mPdfBridge;
+    private WebMessagePort mPdfPort;
     protected String mContent;
     private AppUtils.SystemUiHelper mSystemUiHelper;
     private View mFragmentView;
@@ -110,7 +117,6 @@ public class WebFragment extends LazyLoadFragment
     @Inject FileDownloader mFileDownloader;
     private WebItem mItem;
     private boolean mIsHackerNewsUrl, mEmpty, mReadability;
-    private PdfAndroidJavascriptBridge mPdfAndroidJavascriptBridge;
 
     @Override
     public void onAttach(Context context) {
@@ -239,8 +245,8 @@ public class WebFragment extends LazyLoadFragment
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mPdfAndroidJavascriptBridge != null) {
-            mPdfAndroidJavascriptBridge.cleanUp();
+        if (mPdfBridge != null) {
+            mPdfBridge.cleanUp();
         }
         mWebView.destroy();
     }
@@ -317,17 +323,20 @@ public class WebFragment extends LazyLoadFragment
         reloadUrl(url, null);
     }
 
-    @SuppressLint("AddJavascriptInterface")
     private void reloadUrl(String url, @Nullable String pdfFilePath) {
         mIsPdf = false;
-        if (mPdfAndroidJavascriptBridge != null) {
-            mPdfAndroidJavascriptBridge.cleanUp();
-            mWebView.removeJavascriptInterface("PdfAndroidJavascriptBridge");
+        if (mPdfBridge != null) {
+            mPdfBridge.cleanUp();
+            mPdfBridge = null;
+        }
+        if (mPdfPort != null) {
+            mPdfPort.close();
+            mPdfPort = null;
         }
         if (pdfFilePath != null && TextUtils.equals(PDF_LOADER_URL, url)) {
             setProgress(80);
             mIsPdf = true;
-            mPdfAndroidJavascriptBridge = new PdfAndroidJavascriptBridge(pdfFilePath, new PdfAndroidJavascriptBridge.Callbacks() {
+            mPdfBridge = new PdfBridge(pdfFilePath, new PdfBridge.Callbacks() {
                 @Override
                 public void onFailure() {
                     offerExternalApp();
@@ -339,10 +348,26 @@ public class WebFragment extends LazyLoadFragment
                     setProgress(100);
                 }
             });
-            mWebView.addJavascriptInterface(mPdfAndroidJavascriptBridge, "PdfAndroidJavascriptBridge");
             mWebView.setInitialScale(1);
         }
         mWebView.reloadUrl(url);
+    }
+
+    private void injectPdfPort() {
+        WebMessagePort[] channel = mWebView.createWebMessageChannel();
+        mPdfPort = channel[0];
+        mPdfPort.setWebMessageCallback(new WebMessagePort.WebMessageCallback() {
+            @Override
+            public void onMessage(WebMessagePort port, WebMessage message) {
+                String response = mPdfBridge.handleMessage(message.getData());
+                if (response != null) {
+                    port.postMessage(new WebMessage(response));
+                }
+            }
+        });
+        mWebView.postWebMessage(
+                new WebMessage("pdfPort", new WebMessagePort[]{channel[1]}),
+                Uri.parse(PDF_LOADER_URL));
     }
 
     @Synthetic
@@ -429,7 +454,20 @@ public class WebFragment extends LazyLoadFragment
     private void setUpWebView(View view) {
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress);
         mWebView.setBackgroundColor(Color.TRANSPARENT);
+        mAssetLoader = new WebViewAssetLoader.Builder()
+                .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(getActivity()))
+                .build();
         mWebView.setWebViewClient(new AdBlockWebViewClient(Preferences.adBlockEnabled(getActivity())) {
+            @Override
+            public WebResourceResponse shouldInterceptRequest(
+                    android.webkit.WebView view, WebResourceRequest request) {
+                WebResourceResponse response = mAssetLoader.shouldInterceptRequest(request.getUrl());
+                if (response != null) {
+                    return response;
+                }
+                return super.shouldInterceptRequest(view, request);
+            }
+
             @Override
             public void onPageStarted(android.webkit.WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
@@ -441,6 +479,9 @@ public class WebFragment extends LazyLoadFragment
             @Override
             public void onPageFinished(android.webkit.WebView view, String url) {
                 super.onPageFinished(view, url);
+                if (mIsPdf && mPdfBridge != null) {
+                    injectPdfPort();
+                }
                 if (getActivity() != null) {
                     getActivity().invalidateOptionsMenu();
                 }
@@ -665,20 +706,57 @@ public class WebFragment extends LazyLoadFragment
         }
     }
 
-    static class PdfAndroidJavascriptBridge {
-        private File mFile;
+    static class PdfBridge {
+        private final File mFile;
         private @Nullable RandomAccessFile mRandomAccessFile;
         private @Nullable Callbacks mCallback;
-        private Handler mHandler;
+        private final Handler mHandler;
 
-        PdfAndroidJavascriptBridge(String filePath, @Nullable Callbacks callback) {
+        PdfBridge(String filePath, @Nullable Callbacks callback) {
             mFile = new File(filePath);
             mCallback = callback;
             mHandler = new Handler(Looper.getMainLooper());
         }
 
-        @JavascriptInterface
-        public String getChunk(long begin, long end) {
+        @Nullable
+        String handleMessage(String json) {
+            try {
+                org.json.JSONObject msg = new org.json.JSONObject(json);
+                String type = msg.getString("type");
+                switch (type) {
+                    case "getSize": {
+                        org.json.JSONObject resp = new org.json.JSONObject();
+                        resp.put("type", "size");
+                        resp.put("value", mFile.length());
+                        return resp.toString();
+                    }
+                    case "getChunk": {
+                        long begin = msg.getLong("begin");
+                        long end = msg.getLong("end");
+                        String data = readChunk(begin, end);
+                        org.json.JSONObject resp = new org.json.JSONObject();
+                        resp.put("type", "chunk");
+                        resp.put("requestId", msg.optLong("requestId", -1));
+                        resp.put("begin", begin);
+                        resp.put("data", data);
+                        return resp.toString();
+                    }
+                    case "onLoad":
+                        mHandler.post(() -> { if (mCallback != null) mCallback.onLoad(); });
+                        return null;
+                    case "onFailure":
+                        mHandler.post(() -> { if (mCallback != null) mCallback.onFailure(); });
+                        return null;
+                    default:
+                        return null;
+                }
+            } catch (org.json.JSONException e) {
+                Log.e(TAG, "Failed to parse PDF message", e);
+                return null;
+            }
+        }
+
+        private String readChunk(long begin, long end) {
             try {
                 if (begin < 0 || end <= begin) {
                     return "";
@@ -705,41 +783,13 @@ public class WebFragment extends LazyLoadFragment
             }
         }
 
-        @JavascriptInterface
-        public long getSize() {
-            return mFile.length();
-        }
-
-        @JavascriptInterface
-        public void onLoad() {
-            if (mCallback != null) {
-                mHandler.post(() -> mCallback.onLoad());
-            }
-        }
-
-        @JavascriptInterface
-        public void onFailure() {
-            if (mCallback != null) {
-                mHandler.post(() -> mCallback.onFailure());
-            }
-        }
-
-        public void cleanUp() {
+        void cleanUp() {
             try {
                 if (mRandomAccessFile != null) {
                     mRandomAccessFile.close();
                 }
             } catch (IOException e) {
                 Log.e(TAG, "Failed to close PDF file", e);
-            }
-        }
-
-        @Override
-        public void finalize() throws Throwable {
-            try {
-                cleanUp();
-            } finally {
-                super.finalize();
             }
         }
 
