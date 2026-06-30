@@ -102,6 +102,18 @@ public class AppUtils {
     }
 
     @SuppressWarnings("deprecation")
+    @Nullable
+    public static ResolveInfo resolveActivity(Context context, Intent intent) {
+        PackageManager pm = context.getPackageManager();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            return pm.resolveActivity(intent,
+                    PackageManager.ResolveInfoFlags.of(PackageManager.MATCH_DEFAULT_ONLY));
+        } else {
+            return pm.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY);
+        }
+    }
+
+    @SuppressWarnings("deprecation")
     public static <T extends android.os.Parcelable> T getParcelable(Bundle bundle, String name, Class<T> clazz) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             return bundle.getParcelable(name, clazz);
@@ -124,7 +136,7 @@ public class AppUtils {
         Intent intent = createViewIntent(context, item, url, session);
         String host = Uri.parse(url).getHost();
         if (host != null && !HackerNewsClient.BASE_WEB_URL.contains(host)) {
-            if (intent.resolveActivity(context.getPackageManager()) != null) {
+            if (AppUtils.resolveActivity(context, intent) != null) {
                 context.startActivity(intent);
             }
             return;
@@ -546,7 +558,7 @@ public class AppUtils {
                 .putExtra(Intent.EXTRA_SUBJECT, subject)
                 .putExtra(Intent.EXTRA_TEXT, !TextUtils.isEmpty(subject) ?
                         TextUtils.join(" - ", new String[]{subject, text}) : text);
-        if (intent.resolveActivity(context.getPackageManager()) != null) {
+        if (AppUtils.resolveActivity(context, intent) != null) {
             context.startActivity(intent);
         }
     }

@@ -144,8 +144,7 @@ public class CustomTabsDelegate {
     @Nullable
     private static String getDefaultBrowser(Context context) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://example.com/"));
-        PackageManager pm = context.getPackageManager();
-        ResolveInfo resolveInfo = pm.resolveActivity(browserIntent, PackageManager.MATCH_DEFAULT_ONLY);
+        ResolveInfo resolveInfo = AppUtils.resolveActivity(context, browserIntent);
 
         if (resolveInfo == null) { // If no default browser could be found
             return null;
