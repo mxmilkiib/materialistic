@@ -31,7 +31,7 @@ A refreshed [Hacker News] client for Android — a fork of [Materialistic] by Ha
 
 ### Languages
 
-The app supports 28 languages with full translations:
+The app supports 29 languages with full translations:
 
 - English
 - Spanish (Español)
@@ -61,6 +61,7 @@ The app supports 28 languages with full translations:
 - Jamaican
 - Latin (Latina)
 - Gaelic (Gàidhlig)
+- Scots (Scots)
 
 ### Build
 
