@@ -124,6 +124,12 @@ Forked from [Materialistic](https://github.com/hidroh/materialistic) at commit `
 - **DI injection ordering in `ListFragment` and `FavoriteFragment`**: `BaseListFragment.onActivityCreated` sets `mCustomTabsDelegate` on the adapter, but injection ran after `super.onActivityCreated`, leaving it null. Moved injection before super call
 - **DI injection ordering in `WebFragment` and `ItemFragment`**: `LazyLoadFragment.eagerLoad()` calls `load()` which uses injected fields (`mReadabilityClient`, `mItemManager`), but injection ran after `super.onActivityCreated`. Moved injection before super call
 - **`ListRecyclerViewAdapter.onBindViewHolder`**: added null guard for `mCustomTabsDelegate` as defensive measure
+- **`WebFragment.setFullscreen` ScrollView crash**: `FullscreenViewModel` LiveData initial value `false` triggered `setFullscreen(false)` before view was ready, causing `addView` to fail with "ScrollView can host only one direct child". Added early-return guard and parent check
+- **`ItemActivity` nav callback NPE**: nav FAB callback dereferenced `mAdapter` before it was assigned in `bindData`. Added null guard
+- **`ItemActivity` tab listener leak**: tab listener added in `bindData` was never removed, accumulating on item reloads. Now tracked and removed in `onDestroy`
+- **`HackerNewsItem` Parcelable duplicate**: `favorite` field written and read twice in Parcel, wasting space. Removed duplicate
+- **`BaseListFragment`/`ItemFragment` onDetach ordering**: called `super.onDetach()` before `unsubscribe()`, causing `getActivity()` to return null. Moved `super.onDetach()` to end
+- **`AdBlocker.init` disposable**: tracked the returned `Disposable` instead of discarding it
 
 ## Test Coverage
 
