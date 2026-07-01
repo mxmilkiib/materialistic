@@ -29,6 +29,38 @@ A refreshed [Hacker News] client for Android — a fork of [Materialistic] by Ha
 - **Test coverage** — unit tests for HackerNewsClient, StoryListViewModel, UserServicesClient
 - **GitHub Actions CI** — automated debug/release APK builds and tagged releases
 
+### Languages
+
+The app supports 27 languages with full translations:
+
+- English
+- Spanish (Español)
+- Chinese (Simplified) (简体中文)
+- Portuguese (Português)
+- French (Français)
+- Swedish (Svenska)
+- German (Deutsch)
+- Hindi (हिन्दी)
+- Arabic (العربية)
+- Bengali (বাংলা)
+- Indonesian (Bahasa Indonesia)
+- Urdu (اردو)
+- Polish (Polski)
+- Russian (Русский)
+- Japanese (日本語)
+- Turkish (Türkçe)
+- Nigerian Pidgin
+- Egyptian Arabic (العربية المصرية)
+- Western Punjabi (پنجابی)
+- Tagalog (Tagalog)
+- Tamil (தமிழ்)
+- Yue Chinese (粵語)
+- Wu Chinese (吳語)
+- Korean (한국어)
+- Amharic (አማርኛ)
+- Jamaican
+- Latin (Latina)
+
 ### Build
 
 **Requirements**

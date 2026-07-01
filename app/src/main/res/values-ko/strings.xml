@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">설정</string>
+    <string name="title_activity_list">인기 스토리</string>
+    <string name="title_activity_best">베스트 스토리</string>
+    <string name="title_activity_item">댓글</string>
+    <string name="title_activity_release">새소식</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">서랍 열기</string>
+    <string name="close_drawer">서랍 닫기</string>
+    <string name="view_in_browser">외부 브라우저에서 보기</string>
+    <string name="share">공유</string>
+    <string name="title_activity_about">정보</string>
+    <string name="license_title">라이선스</string>
+    <string name="third_party_licenses_title">제3자 라이선스</string>
+    <string name="developer_info_title">개발자 정보</string>
+    <string name="application_info_title">앱 정보</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>버전</b> %1$s<br>
+            <b>빌드</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>빌드됨</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b>은 Ha Duy Trung의 Materialistic의 포크입니다.<br><br>
+            <b>변경사항:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; 현대화된 toolchain<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; 새 테마<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; 보라색<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; 바다<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; 장미<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Monokai<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Nord<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; 더 작은 폰트와 더 좁은 간격으로 컴팩트 리스트 모드<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; 새 폰트<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; 단순화된 내비게이션 서랍, 모든 섹션 루트에<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; 전체 앱에 더 좁은 간격<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; 투명한 오버스크롤 글로우<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; 사이드 바이 사이드 디버그 설치 지원<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">라이브러리 및 리소스</string>
+    <string name="title_activity_favorite">저장된 스토리</string>
+    <string name="saved">%1$s 전에 저장됨</string>
+    <string name="toast_saved">스토리 저장됨</string>
+    <string name="clear_all">모두 지우기</string>
+    <string name="toast_removed">스토리 제거됨</string>
+    <string name="no_saved_stories">아직 저장된 스토리 없음</string>
+    <string name="no_comments">아직 조용하지 않음</string>
+    <string name="confirm_clear">모든 저장된 스토리를 지우시겠습니까?</string>
+    <string name="export">내보내기</string>
+    <string name="clear_selected">선택 지우기</string>
+    <string name="confirm_clear_selected">선택된 저장된 스토리를 지우시겠습니까?</string>
+    <string name="search">검색</string>
+    <string name="hint_search_saved_stories">저장된 스토리 검색</string>
+    <string name="no_stories_search">찾으시는 것을 찾을 수 없습니다</string>
+    <string name="display">표시</string>
+    <string name="pref_external_title">외부 브라우저 사용</string>
+    <string name="pref_external_summary">외부 브라우저에서 기사 읽기</string>
+    <string name="pref_color_code_title">색상 코드</string>
+    <string name="pref_color_code_opacity_title">색상 코드 불투명도</string>
+    <string name="pref_highlight_updated_title">업데이트된 스토리 강조</string>
+    <string name="pref_highlight_updated_summary">마지막 새로고침 이후 변경사항 표시</string>
+    <string name="pref_custom_tab_title">사용자 지정 탭 사용</string>
+    <string name="pref_custom_tab_summary">전체 브라우저 대신 브라우저 탭 열기</string>
+    <string name="pref_story_display_title">기본 열기</string>
+    <string name="pref_theme_title">테마</string>
+    <string name="pref_app_icon_title">앱 아이콘 스타일</string>
+    <string name="app_icon_default">주황 (기본값)</string>
+    <string name="app_icon_purple">보라색</string>
+    <string name="app_icon_green">녹색</string>
+    <string name="app_icon_blue">파란색</string>
+    <string name="app_icon_red">빨간색</string>
+    <string name="app_icon_teal">청록색</string>
+    <string name="app_icon_pink">분홍색</string>
+    <string name="app_icon_indigo">인디고</string>
+    <string name="pref_daynight_title">자동 주야 모드</string>
+    <string name="pref_search_sort_title">정렬 기준</string>
+    <string name="pref_search_sort_value_recent">최신</string>
+    <string name="pref_search_sort_value_default">기본값</string>
+    <string name="pref_text_size_title">텍스트 크기</string>
+    <string name="pref_font_title">폰트</string>
+    <string name="pref_comment_display_title">스레드</string>
+    <string name="pref_max_lines_title">긴 댓글</string>
+    <string name="pref_multi_window_title">다중 창 모드</string>
+    <string name="pref_multi_window_summary">스토리를 열 창 (Android 7+)</string>
+    <string name="pref_multi_window_none">동일</string>
+    <string name="pref_multi_window_one">다른</string>
+    <string name="pref_navigation_title">온스크린 내비게이션</string>
+    <string name="pref_navigation_vibrate_title">터치 시 진동</string>
+    <string name="pref_lazy_load_title">지연 로드 콘텐츠</string>
+    <string name="pref_lazy_load_summary">탭으로 전환할 때만 콘텐츠 로드</string>
+    <string name="pref_saved_item_sync_title">오프라인 액세스 활성화</string>
+    <string name="pref_saved_item_sync_summary">스토리 저장 시 콘텐츠 다운로드</string>
+    <string name="pref_offline_data_title">다운로드 시기</string>
+    <string name="pref_offline_comments_title">댓글 다운로드</string>
+    <string name="pref_offline_article_title">기사 다운로드</string>
+    <string name="pref_offline_readability_title">가독성 다운로드</string>
+    <string name="pref_offline_data_wifi">WiFi만</string>
+    <string name="pref_offline_data_always">항상</string>
+    <string name="pref_offline_notification_title">진행률 표시</string>
+    <string name="pref_offline_notification_summary">다운로드 진행률 알림 표시</string>
+    <string name="pref_launch_screen_title">기본 화면</string>
+    <string name="pref_volume_title">볼륨 내비게이션 사용</string>
+    <string name="pref_volume_summary">볼륨 키로 위/아래 스크롤</string>
+    <string name="pref_ad_block_title">광고 차단</string>
+    <string name="pref_ad_block_summary">내부 브라우저용 간단 광고 차단기 활성화</string>
+    <string name="pref_line_height_title">줄 간격</string>
+    <string name="pref_list_item_view_title">카드로 표시</string>
+    <string name="pref_list_compact_title">컴팩트 리스트 간격</string>
+    <string name="pref_list_compact_summary">더 넓은 제목을 위한 더 좁은 행과 더 좁은 점수 열</string>
+    <string name="pref_thread_indicator_title">스레드 표시기</string>
+    <string name="pref_widget_section_title">섹션</string>
+    <string name="pref_widget_query_title">쿼리로 필터 (선택 사항)</string>
+    <string name="pref_widget_frequency_title">업데이트 빈도</string>
+    <string name="pref_auto_viewed_title">자동으로 읽음으로 표시</string>
+    <string name="pref_auto_viewed_summary">위로 스와이프할 때 스토리를 읽음으로 표시</string>
+    <string name="pref_smooth_scroll_title">내비게이션 애니메이션</string>
+    <string name="pref_smooth_scroll_summary">스크롤 정확도 향상을 위해 비활성화</string>
+    <string name="pref_list_swipe_left_title">왼쪽으로 스와이프</string>
+    <string name="pref_list_swipe_right_title">오른쪽으로 스와이프</string>
+    <string name="connection_error">Hacker News에 연결할 수 없습니다. 연결을 확인하거나 다시 시도하십시오.</string>
+    <string name="select_story">보려는 스토리 선택</string>
+    <string name="download_external">다른 앱에서 보기</string>
+    <string name="try_me">길게 누르기/스와이프하여 나중에 저장!</string>
+    <string name="title_activity_jobs">채용</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">새 스토리</string>
+    <string name="title_activity_search">HN 검색</string>
+    <string name="clear_search_history">검색 기록 지우기</string>
+    <string name="clear_search_history_confirm">검색 기록을 지우시겠습니까?</string>
+    <string name="undo">실행 취소</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">댓글</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s 댓글</item>
+        <item quantity="one">%1$s 댓글</item>
+        <item quantity="other">%1$s 댓글</item>
+    </plurals>
+    <string name="article">기사</string>
+    <string name="reset_settings">모든 설정 재설정</string>
+    <string name="reset_settings_confirm">모든 기본 설정으로 재설정하시겠습니까?</string>
+    <string name="last_updated">마지막 업데이트 %1$s</string>
+    <string name="feedback">피드백</string>
+    <string name="send_feedback">피드백 보내기</string>
+    <string name="title_hint">제목</string>
+    <string name="comment_hint">댓글</string>
+    <string name="feedback_note">
+        <![CDATA[
+            피드백은 <a href="https://github.com/mxmilkiib/material-hack/issues">Material Hack Github issue</a>로 공개됩니다.
+        ]]>
+    </string>
+    <string name="title_required">제목이 필요합니다</string>
+    <string name="comment_required">댓글이 필요합니다</string>
+    <string name="feedback_sent">피드백 전송됨. 감사합니다!</string>
+    <string name="feedback_failed">전송 실패, 다시 시도하십시오</string>
+    <string name="chooser_title">다음으로 열기</string>
+    <string name="title_activity_popular">따라잡기</string>
+    <string name="range">범위</string>
+    <string name="popular_range_last_24h">지난 24시간</string>
+    <string name="popular_range_past_week">지난 주</string>
+    <string name="popular_range_past_month">지난 달</string>
+    <string name="popular_range_past_year">지난 해</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s 새 스토리</item>
+        <item quantity="one">%1$s 새 스토리</item>
+        <item quantity="other">%1$s 새 스토리</item>
+    </plurals>
+    <string name="show_me">보여줘</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">%1$s 새 스토리 표시 중</item>
+        <item quantity="one">%1$s 새 스토리 표시 중</item>
+        <item quantity="other">%1$s 새 스토리 표시 중</item>
+    </plurals>
+    <string name="show_all">모두 표시</string>
+    <string name="whats_this">이게 뭐죠?</string>
+    <string name="got_it">알겠습니다</string>
+    <string name="help_new_story">마지막 새로고침 이후 새 스토리</string>
+    <string name="help_promoted_story">마지막 새로고침 이후 홍보된 스토리</string>
+    <string name="help_new_comments">마지막 새로고침 이후 새 댓글이 있는 스토리</string>
+    <string name="help_lazy_load">지연 로드 설정이 활성화되면 항목이 처음 열릴 때만 선호하는 기본 탭이 로드됩니다.\n\n느린 연결이거나 지연이 발생하는 경우 이를 활성화하면 도움이 될 수 있습니다.</string>
+    <string name="help_volume_up">볼륨 올림을 눌러 위로 스크롤</string>
+    <string name="help_long_volume_up">볼륨 올림을 길게 눌러 위로 빠르게 스크롤</string>
+    <string name="help_volume_down">볼륨 내림을 눌러 아래로 스크롤</string>
+    <string name="help_navigate">스와이프 제스처에 응답하는 플로팅 내비게이션 버튼을 표시하여 중첩된 댓글 스레드를 탐색합니다.</string>
+    <string name="help_navigate_up">스와이프 \u2191: 이전 댓글로 이동</string>
+    <string name="help_navigate_down">스와이프 \u2193: 다음 댓글로 이동</string>
+    <string name="help_navigate_right">스와이프 \u2192: 확장 &amp; 1차 답글로 이동</string>
+    <string name="help_navigate_left">스와이프 \u2190: 부모로 돌아가기</string>
+    <string name="help_navigate_move">길게 눌러 내비게이션 버튼을 새 위치로 드래그</string>
+    <string name="readability">가독성</string>
+    <string name="text_size_extra_small">매우 작음</string>
+    <string name="text_size_small">작음</string>
+    <string name="text_size_medium">중간</string>
+    <string name="text_size_large">큼</string>
+    <string name="text_size_extra_large">매우 큼</string>
+    <string name="readability_failed">기사를 분석할 수 없습니다</string>
+    <string name="theme_light">밝음</string>
+    <string name="theme_dark">어두움</string>
+    <string name="theme_black">검정</string>
+    <string name="theme_sepia">세피아</string>
+    <string name="theme_green">녹색</string>
+    <string name="theme_transparent">투명</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">보라색</string>
+    <string name="theme_ocean">바다</string>
+    <string name="theme_rose">장미</string>
+    <string name="theme_monokai">Monokai</string>
+    <string name="theme_nord">Nord</string>
+    <string name="theme_crimson">크림슨</string>
+    <string name="theme_forest">숲</string>
+    <string name="theme_midnight">자정</string>
+    <string name="theme_sand">모래</string>
+    <string name="theme_dracula">Dracula</string>
+    <string name="theme_darkorange">어두운 주황</string>
+    <string name="comment_display_multiple">여러 페이지</string>
+    <string name="comment_display_single">단일 페이지 - 자동 확장</string>
+    <string name="comment_display_collapsed">단일 페이지 - 축소</string>
+    <string name="story_display_article">기사</string>
+    <string name="story_display_comments">댓글</string>
+    <string name="search_sort_recent">더 최신</string>
+    <string name="search_sort_popularity">인기</string>
+    <string name="story_display_readability">가독성</string>
+    <string name="font_options">폰트 옵션</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">모든 %1$d 줄 읽기</string>
+    <string name="comment_max_lines_3">최대 3 줄</string>
+    <string name="comment_max_lines_4">최대 4 줄</string>
+    <string name="comment_max_lines_5">최대 5 줄</string>
+    <string name="comment_max_lines_all">전체 콘텐츠</string>
+    <string name="line_height_compact">컴팩트</string>
+    <string name="line_height_normal">보통</string>
+    <string name="line_height_cozy">아늑한</string>
+    <string name="line_height_comfortable">편안한</string>
+    <string name="frequency_3_hours">3 시간</string>
+    <string name="frequency_6_hours">6 시간</string>
+    <string name="frequency_12_hours">12 시간</string>
+    <string name="frequency_1_day">1 일</string>
+    <string name="file_not_supported">콘텐츠 유형이 지원되지 않음</string>
+    <string name="username_hint">사용자 이름</string>
+    <string name="password_hint">비밀번호</string>
+    <string name="login">로그인</string>
+    <string name="title_activity_login">Hacker News에 로그인</string>
+    <string name="username_required">사용자 이름이 필요합니다</string>
+    <string name="password_required">비밀번호가 필요합니다</string>
+    <string name="login_failed">로그인/계정 생성 실패, 다시 시도하십시오</string>
+    <string name="welcome">환영합니다 %1$s!</string>
+    <string name="logout_confirm">로그아웃하시겠습니까?</string>
+    <string name="choose_account">계정 선택</string>
+    <string name="add_account">추가</string>
+    <string name="remove_account">제거</string>
+    <string name="login_note">자격 증명은 장치의 설정 / 계정 아래 안전하게 저장됩니다</string>
+    <string name="save">저장</string>
+    <string name="unsave">저장 취소</string>
+    <string name="re_enter_password">비밀번호를 다시 입력</string>
+    <string name="vote_up">추천</string>
+    <string name="voted">성공적으로 투표함</string>
+    <string name="vote_failed">투표 기록 실패. 다시 시도하십시오.</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">보내는 중...</string>
+    <string name="add_comment">댓글 추가</string>
+    <string name="title_activity_compose">작성</string>
+    <string name="send">보내기</string>
+    <string name="original_content">원본 콘텐츠</string>
+    <string name="quote">인용</string>
+    <string name="formatting_guidelines">HN 포맷팅 가이드라인</string>
+    <string name="confirm_save_draft">초안 저장?</string>
+    <string name="create_account">계정 생성</string>
+    <string name="comment_failed">댓글 전송 실패</string>
+    <string name="comment_successful">댓글 추가됨. 보려면 새로고침하세요.</string>
+    <string name="confirm_no_waiting">기다리지 않고 나가시겠습니까?</string>
+    <string name="rate_app">앱 평가</string>
+    <string name="or">또는</string>
+    <string name="leave_feedback">피드백 남기기</string>
+    <string name="no_playstore">Play Store 앱을 찾을 수 없습니다</string>
+    <string name="submit_content_hint">URL 또는 텍스트</string>
+    <string name="title_activity_submit">HN에 제출</string>
+    <string name="url_text_required">URL 또는 텍스트가 필요합니다</string>
+    <string name="submit_failed">제출 실패. 다시 시도하십시오.</string>
+    <string name="submit_successful">성공적으로 제출됨</string>
+    <string name="confirm_no_submit">제출하지 않고 나가시겠습니까?</string>
+    <string name="submit_note">토론을 위한 질문을 제출하려면 텍스트를 입력하거나 링크를 제출하려면 URL을 입력합니다. 다른 앱에서 직접 링크를 공유할 수도 있습니다</string>
+    <string name="confirm_submit_url">링크로 제출?</string>
+    <string name="confirm_submit_question">질문으로 제출?</string>
+    <string name="submission_guidelines">제출 가이드라인</string>
+    <string name="title_activity_user">내 프로필</string>
+    <string name="user_info">생성: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s 제출</item>
+        <item quantity="one">%1$s 제출</item>
+        <item quantity="other">%1$s 제출</item>
+    </plurals>
+    <string name="view_story">스토리 보기</string>
+    <string name="user_failed">사용자를 로드할 수 없습니다. 다시 시도하십시오.</string>
+    <string name="dead_prefix">[죽은]</string>
+    <string name="title_activity_thread_preview">스레드 미리보기</string>
+    <string name="view_thread">스레드 보기</string>
+    <string name="view_user">사용자 보기</string>
+    <string name="more">더</string>
+    <string name="logout">로그아웃</string>
+    <string name="offline">오프라인</string>
+    <string name="offline_notice">현재 오프라인입니다</string>
+    <string name="download_in_progress">다운로드 진행 중</string>
+    <string name="love_it">이걸 좋아합니다!</string>
+    <string name="display_options">표시 옵션</string>
+    <string name="pull_up_hint">더 보려면 위로 당기</string>
+    <string name="find_in_page">페이지에서 찾기</string>
+    <string name="no_matches">일치하는 항목 없음</string>
+    <string name="back">뒤로</string>
+    <string name="forward">앞으로</string>
+    <string name="zoom_out">축소</string>
+    <string name="zoom_in">확대</string>
+    <string name="refresh">새로고침</string>
+    <string name="exit_fullscreen">나가기</string>
+    <string name="next">다음</string>
+    <string name="list_display_options">리스트 표시 옵션</string>
+    <string name="last_screen">마지막 사용된 화면</string>
+    <string name="widget_options">위젯 옵션</string>
+    <string name="item_exist">유사한 스토리가 이미 제출됨</string>
+    <string name="hn_link">Hacker News 링크</string>
+    <string name="article_link">기사 링크</string>
+    <string name="hint_drag">위치 변경을 위해 드래그</string>
+    <string name="hint_nav_short">탐색하려면 스와이프 \u2191 \u2193 \u2192 \u2190\n위치 변경하려면 길게 누르기</string>
+    <string name="konami">코나미 코드를 얻으셨습니다! 저에게 5별 주시겠어요?</string>
+    <string name="end_of_thread">스레드 끝</string>
+    <string name="save_draft">초안 저장</string>
+    <string name="discard_draft">초안 폐기</string>
+    <string name="clear_drafts">모든 초안 지우기</string>
+    <string name="more_sections">더 많은 섹션</string>
+    <string name="list">리스트</string>
+    <string name="delete">삭제</string>
+    <string name="full_text">전체 텍스트</string>
+    <string name="empty_text">[이 스토리에는 콘텐츠가 없습니다]</string>
+    <string name="none">없음</string>
+    <string name="hint_update">앱이 방금 업데이트되었습니다!</string>
+    <string name="export_saved_stories">저장된 스토리 내보내기</string>
+    <string name="export_notification">파일에 저장됨. 옵션을 탭하세요.</string>
+    <string name="share_file">파일 공유</string>
+    <string name="privacy_policy">개인정책</string>
+    <string name="notification_channel_downloads">다운로드</string>
+    <string name="reply">답장</string>
+</resources>

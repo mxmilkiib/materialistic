@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">ቅንብሮች</string>
+    <string name="title_activity_list">በከፊት የሆኑ ታሪኮች</string>
+    <string name="title_activity_best">ተራሪዎች ታሪኮች</string>
+    <string name="title_activity_item">አስተያየሞች</string>
+    <string name="title_activity_release">ምን አዲስ ነው</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">ማስታወሻውን ክፈት</string>
+    <string name="close_drawer">ማስታወሻውን ዝጋ</string>
+    <string name="view_in_browser">በውጫ አሳሽ ውስጥ ይመልከቱ</string>
+    <string name="share">ያካፍሱ</string>
+    <string name="title_activity_about">ስለ</string>
+    <string name="license_title">ፍቃድ</string>
+    <string name="third_party_licenses_title">ሶስተኛ ፓርቲ ፍቃዶች</string>
+    <string name="developer_info_title">የገንቢ መረጃ</string>
+    <string name="application_info_title">የመተግበሪያ መረጃ</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>ስሪያ</b> %1$s<br>
+            <b>ልማት</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>ተሰራ</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> የ Ha Duy Trung Materialistic ክፍል ነው።<br><br>
+            <b>ለውጦች:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; ዘመነ መሣሪያ<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; አዲስ ገጽቶች<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; ዘጠጣ<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; ውቅያዊ<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; ሮዝ<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Monokai<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Nord<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; አጭር ፊደሎች እና ቀጥታ ክፍተኛ ክፍተኛ አልባበት ዝርዝር ዝርዝር<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; አዲስ ፊደሎች<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; ቀላል የአሰራር ማስታወሻ፣ ሁሉም ክፍሎች በስር<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; በሙሉ መተግበሪያ ውስጥ ቀጥታ ክፍተኛ<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; ግልጽ ኦቨርስክሮል ብርሃን<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; ጎን በጎን ዲባግ መጫን ድጋፍ<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">ቤተረችዎች እና ሀብሮች</string>
+    <string name="title_activity_favorite">የተቀመጡ ታሪኮች</string>
+    <string name="saved">ከ%1$s በፊት ተቀምጧል</string>
+    <string name="toast_saved">ታሪኮ ተቀምጧል</string>
+    <string name="clear_all">ሁሉንም አጽዳፍ</string>
+    <string name="toast_removed">ታሪኮ ተወጥቷል</string>
+    <string name="no_saved_stories">እስካዊ የተቀመጡ ታሪኮች የሉም</string>
+    <string name="no_comments">እስካዊ አስተያየሞች የሉም</string>
+    <string name="confirm_clear">ሁሉም የተቀመጡ ታሪኮች አጽዳፍ?</string>
+    <string name="export">ወደ ውጪ ላክ</string>
+    <string name="clear_selected">የተመረጡን አጽዳፍ</string>
+    <string name="confirm_clear_selected">የተመረጡን የተቀመጡ ታሪኮች አጽዳፍ?</string>
+    <string name="search">ፈልግ</string>
+    <string name="hint_search_saved_stories">የተቀመጡ ታሪኮች ፈልግ</string>
+    <string name="no_stories_search">የፈለጉትን ማግኘት አልችልም</string>
+    <string name="display">አሳይ</string>
+    <string name="pref_external_title">ውጫ አሳሽ ተጠቀም</string>
+    <string name="pref_external_summary">በውጫ አሳሽ ውስጥ አርቲክሎች ያንብሡ</string>
+    <string name="pref_color_code_title">ቀለም ኮድ</string>
+    <string name="pref_color_code_opacity_title">ቀለም ኮድ ክፍላስ</string>
+    <string name="pref_highlight_updated_title">የተዘመኑ ታሪኮች አነስትር</string>
+    <string name="pref_highlight_updated_summary">ከመጨረሻ ውስጥ ለውጦች አሳይ</string>
+    <string name="pref_custom_tab_title">ብጁ ትሮች ተጠቀም</string>
+    <string name="pref_custom_tab_summary">ሙሉ አሳሽ ወደ አሳሽ ትር ክፈት</string>
+    <string name="pref_story_display_title">ነባብ ክፈት</string>
+    <string name="pref_theme_title">ገጽት</string>
+    <string name="pref_app_icon_title">የመተግበሪያ አዶ ዘይቤ</string>
+    <string name="app_icon_default">አረንጓዴ (ነባብ)</string>
+    <string name="app_icon_purple">ዘጠጣ</string>
+    <string name="app_icon_green">አረንጓዴ</string>
+    <string name="app_icon_blue">ሰማያዊ</string>
+    <string name="app_icon_red">ቀይም</string>
+    <string name="app_icon_teal">ቲል</string>
+    <string name="app_icon_pink">ሮዝ</string>
+    <string name="app_icon_indigo">ኢንዲጎ</string>
+    <string name="pref_daynight_title">ራስ-አውቶ ቀን-ሌሊ ሁኔታ</string>
+    <string name="pref_search_sort_title">በዘዴ</string>
+    <string name="pref_search_sort_value_recent">በቅርብ ጊዜ</string>
+    <string name="pref_search_sort_value_default">ነባብ</string>
+    <string name="pref_text_size_title">የጽሑፍ መጠን</string>
+    <string name="pref_font_title">ፊደል</string>
+    <string name="pref_comment_display_title">ክፍል</string>
+    <string name="pref_max_lines_title">ረጅም አስተያየም</string>
+    <string name="pref_multi_window_title">በአንድ ዙሪያ ሁኔታ</string>
+    <string name="pref_multi_window_summary">ታሪኮን የሚከፍት መስኮት (Android 7+)</string>
+    <string name="pref_multi_window_none">አንድ</string>
+    <string name="pref_multi_window_one">ሌላ</string>
+    <string name="pref_navigation_title">በስክር አሰራር</string>
+    <string name="pref_navigation_vibrate_title">በመንካት ላይ ንቁ</string>
+    <string name="pref_lazy_load_title">ዝግግጭ መጫን ይዘት</string>
+    <string name="pref_lazy_load_summary">ይዘትን ወደ ትሮው ሲቀይሩ ብቻ መጫን</string>
+    <string name="pref_saved_item_sync_title">ኦፍላይን መድረስ አንቃ</string>
+    <string name="pref_saved_item_sync_summary">ታሪኮን ሲቀምጡ ይዘት ያውርዱ</string>
+    <string name="pref_offline_data_title">መጫን ጊዜ</string>
+    <string name="pref_offline_comments_title">አስተያየሞች ያውርዱ</string>
+    <string name="pref_offline_article_title">አርቲክል ያውርዱ</string>
+    <string name="pref_offline_readability_title">ንባብነት ያውርዱ</string>
+    <string name="pref_offline_data_wifi">WiFi ብቻ</string>
+    <string name="pref_offline_data_always">ሁልጊዜ</string>
+    <string name="pref_offline_notification_title">አሰራር አሳይ</string>
+    <string name="pref_offline_notification_summary">ለውርድ አሰራር ማስታወሻ አሳይ</string>
+    <string name="pref_launch_screen_title">ነባብ ስክር</string>
+    <string name="pref_volume_title">የድምጽ አሰራር ተጠቀም</string>
+    <string name="pref_volume_summary">በድምጽ ቁልፎች አርንብር እና አውርር</string>
+    <string name="pref_ad_block_title">ማስታወሻዎች አግል</string>
+    <string name="pref_ad_block_summary">ለውስጫ አሳሽ ቀላል ማስታወሻ አግልን አንቃ</string>
+    <string name="pref_line_height_title">የመስመር ክፍተኛ</string>
+    <string name="pref_list_item_view_title">እንደ ካርድ አሳይ</string>
+    <string name="pref_list_compact_title">ክፍል ዝርዝር ክፍተኛ</string>
+    <string name="pref_list_compact_summary">ለሰፊት አርንብሮች ቀጥታ ረድሮች እና ቀጥታ ነጥት አምራር</string>
+    <string name="pref_thread_indicator_title">የክፍል አሳሪ</string>
+    <string name="pref_widget_section_title">ክፍል</string>
+    <string name="pref_widget_query_title">በጥያቄ ፈልግ (አማራጭ)</string>
+    <string name="pref_widget_frequency_title">የዝርዝር ድርጊት</string>
+    <string name="pref_auto_viewed_title">ራስ-አውቶ እንደ ተያየ ምልክ</string>
+    <string name="pref_auto_viewed_summary">እንደ አርንብሩ ታሪኮችን እንደ ተያየ ምልክ</string>
+    <string name="pref_smooth_scroll_title">አሰራር አንቃ</string>
+    <string name="pref_smooth_scroll_summary">ለየተሻሻ አርንብር ትክክለኛ አስተካከል</string>
+    <string name="pref_list_swipe_left_title">ወደ ግራ አርንብር</string>
+    <string name="pref_list_swipe_right_title">ወደ ቀኝ አርንብር</string>
+    <string name="connection_error">ከ Hacker News ማገናኘት አልችልም። ግንኙን ወይም እንደግ ይሞክሩ።</string>
+    <string name="select_story">ለመመልከት ታሪኮ ይምረጡ</string>
+    <string name="download_external">በሌላ መተግበሪያ ውስጥ ይመልከቱ</string>
+    <string name="try_me">ለኋዲአ ለማስቀምጥ ረጅም መጫን/አርንብር!</string>
+    <string name="title_activity_jobs">ስራዎች</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">አዲስ ታሪኮች</string>
+    <string name="title_activity_search">HN ፈልግ</string>
+    <string name="clear_search_history">የፍለግ ታሪክ አጽዳፍ</string>
+    <string name="clear_search_history_confirm">የፍለግ ታሪክ አጽዳፍ?</string>
+    <string name="undo">ተመልስ</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">አስተያየሞች</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s አስተያየም</item>
+        <item quantity="one">%1$s አስተያየም</item>
+        <item quantity="other">%1$s አስተያየሞች</item>
+    </plurals>
+    <string name="article">አርቲክል</string>
+    <string name="reset_settings">ሁሉም ቅንብሮች እንደነባብ አድረስ</string>
+    <string name="reset_settings_confirm">ሁሉም ምርጫዎችዎን ወደ መተግበሪያ ነባቦች እንደነባብ አድረስ?</string>
+    <string name="last_updated">መጨረሻ ተደረሰ %1$s</string>
+    <string name="feedback">አስተያየም</string>
+    <string name="send_feedback">አስተያየም ላክ</string>
+    <string name="title_hint">ርዕስ</string>
+    <string name="comment_hint">አስተያየም</string>
+    <string name="feedback_note">
+        <![CDATA[
+            አስተያየምዎ እንደ <a href="https://github.com/mxmilkiib/material-hack/issues">Material Hack Github issue</a> ይለገ፣ል።
+        ]]>
+    </string>
+    <string name="title_required">ርዕስ ያስፈልጋል</string>
+    <string name="comment_required">አስተያየም ያስፈልጋል</string>
+    <string name="feedback_sent">አስተያየም ተልኳል። አመሰግናለሁ!</string>
+    <string name="feedback_failed">መላክ አልተቻለም፣ እንደግ ይሞክሩ</string>
+    <string name="chooser_title">በእር ክፈት</string>
+    <string name="title_activity_popular">አካት</string>
+    <string name="range">ክልል</string>
+    <string name="popular_range_last_24h">ያለፉት 24 ሰዓት</string>
+    <string name="popular_range_past_week">ያለፉት ሳምንት</string>
+    <string name="popular_range_past_month">ያለፉት ወር</string>
+    <string name="popular_range_past_year">ያለፉት ዓመት</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s አዲስ ታሪኮ</item>
+        <item quantity="one">%1$s አዲስ ታሪኮ</item>
+        <item quantity="other">%1$s አዲስ ታሪኮች</item>
+    </plurals>
+    <string name="show_me">አሳየኝ</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">%1$s አዲስ ታሪኮ አሳየኝ</item>
+        <item quantity="one">%1$s አዲስ ታሪኮ አሳየኝ</item>
+        <item quantity="other">%1$s አዲስ ታሪኮች አሳየኝ</item>
+    </plurals>
+    <string name="show_all">ሁሉንም አሳይ</string>
+    <string name="whats_this">ይህ ይመስል?</string>
+    <string name="got_it">ገባኝ</string>
+    <string name="help_new_story">ከመጨረሻ ውስጥ አዲስ ታሪኮ</string>
+    <string name="help_promoted_story">ከመጨረሻ ውስጥ የተራዘ ታሪኮ</string>
+    <string name="help_new_comments">ከመጨረሻ ውስጥ አዲስ አስተያየሞች ያለው ታሪኮ</string>
+    <string name="help_lazy_load">ዝግግጭ መጫን ቅንብር ከተነቀለ፣ አንድ ንጥር በመጀመር ጊዜ የሚመረጡት የነባብ ትር ብቻ ይጫናል።\n\nእርስዎ በዝግግጭ ግንኙ ላይ ወይም ዘግይግ ከሚያጋጡ ከሆነ፣ ይህን አንቃ ሊረዳዎ ይችላል።</string>
+    <string name="help_volume_up">አርንብር ለማስተካከል ድምጽ ከፍተ ይጫኑ</string>
+    <string name="help_long_volume_up">ወደ ላይ ፈጣን ለማስተካከል ድምጽ ከፍተ ረጅም ይጫኑ</string>
+    <string name="help_volume_down">አውርር ለማስተካከል ድምጽ ወደ ታች ይጫኑ</string>
+    <string name="help_navigate">የአርንብር አንስተያየሞች ክፍሎችን ለመራመር አርንብር ስልቶችን የሚቀበል ተንሳፊ አሰራር አሳይ</string>
+    <string name="help_navigate_up">አርንብር \u2191: ወደ ቀዳሚ አስተያየም ሂድ</string>
+    <string name="help_navigate_down">አርንብር \u2193: ወደ ቀጣሚ አስተያየም ሂድ</string>
+    <string name="help_navigate_right">አርንብር \u2192: አራፍ &amp; ወደ 1ኛ ምላሽ ሂድ</string>
+    <string name="help_navigate_left">አርንብር \u2190: ወደ ወላጅ ተመለስ</string>
+    <string name="help_navigate_move">አሰራር አዶን ወደ አዲስ ቦታ ለማውረድ ረጅም ይጫኑ</string>
+    <string name="readability">ንባብነት</string>
+    <string name="text_size_extra_small">በጣም ትንሽ</string>
+    <string name="text_size_small">ትንሽ</string>
+    <string name="text_size_medium">መካከር</string>
+    <string name="text_size_large">ትላር</string>
+    <string name="text_size_extra_large">በጣም ትላር</string>
+    <string name="readability_failed">አርቲክልን ማንቀል አልችልም</string>
+    <string name="theme_light">ብርሃን</string>
+    <string name="theme_dark">ጥርም</string>
+    <string name="theme_black">ጥታር</string>
+    <string name="theme_sepia">ሴፒያ</string>
+    <string name="theme_green">አረንጓዴ</string>
+    <string name="theme_transparent">ግልጽ</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">ዘጠጣ</string>
+    <string name="theme_ocean">ውቅያዊ</string>
+    <string name="theme_rose">ሮዝ</string>
+    <string name="theme_monokai">Monokai</string>
+    <string name="theme_nord">Nord</string>
+    <string name="theme_crimson">ክሪምሰን</string>
+    <string name="theme_forest">አረፍ</string>
+    <string name="theme_midnight">ጧሊት</string>
+    <string name="theme_sand">አሸዋ</string>
+    <string name="theme_dracula">Dracula</string>
+    <string name="theme_darkorange">ጥር አረንጓዴ</string>
+    <string name="comment_display_multiple">በአንድ ላይ ገጾች</string>
+    <string name="comment_display_single">አንድ ገጽ - ራስ-አውቶ አራፍ</string>
+    <string name="comment_display_collapsed">አንድ ገጽ - ተሰቀለ</string>
+    <string name="story_display_article">አርቲክል</string>
+    <string name="story_display_comments">አስተያየሞች</string>
+    <string name="search_sort_recent">በቅርብ ጊዜ</string>
+    <string name="search_sort_popularity">ተወዳጅነት</string>
+    <string name="story_display_readability">ንባብነት</string>
+    <string name="font_options">የፊደል አማራጮች</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">ሁሉንም %1$d መስመሮች ያንብሡ</string>
+    <string name="comment_max_lines_3">ከፍተ 3 መስመሮች</string>
+    <string name="comment_max_lines_4">ከፍተ 4 መስመሮች</string>
+    <string name="comment_max_lines_5">ከፍተ 5 መስመሮች</string>
+    <string name="comment_max_lines_all">ሙሉ ይዘት</string>
+    <string name="line_height_compact">ክፍል</string>
+    <string name="line_height_normal">መደበኛ</string>
+    <string name="line_height_cozy">አረመኛ</string>
+    <string name="line_height_comfortable">አርማኛ</string>
+    <string name="frequency_3_hours">3 ሰዓት</string>
+    <string name="frequency_6_hours">6 ሰዓት</string>
+    <string name="frequency_12_hours">12 ሰዓት</string>
+    <string name="frequency_1_day">1 ቀን</string>
+    <string name="file_not_supported">የይዘት ዓይነት የሚደግፍ አይደለም</string>
+    <string name="username_hint">የተጠቀሚ ስም</string>
+    <string name="password_hint">የይለፍ ቃል</string>
+    <string name="login">ግባ</string>
+    <string name="title_activity_login">ወደ Hacker News ግባ</string>
+    <string name="username_required">የተጠቀሚ ስም ያስፈልጋል</string>
+    <string name="password_required">የይለፍ ቃል ያስፈልጋል</string>
+    <string name="login_failed">ግባ/መለያያ መፍረት አልተቻለም፣ እንደግ ይሞክሩ</string>
+    <string name="welcome">እንኳን ደህና %1$s!</string>
+    <string name="logout_confirm">መውጣ ይፈልጋሉ?</string>
+    <string name="choose_account">መለያያ ይምረጡ</string>
+    <string name="add_account">አክልር</string>
+    <string name="remove_account">አስወጣ</string>
+    <string name="login_note">የእርስዎ መለያያዎች በመሣሪያዎ ቅንብሮች / መለያያዎች ስር በደህና ይቀመጣሉ</string>
+    <string name="save">አስቀምጥ</string>
+    <string name="unsave">አስቀምጥ አትር</string>
+    <string name="re_enter_password">የይለፍ ቃልዎን እንደግ ያስገቡ</string>
+    <string name="vote_up">ድምጽ</string>
+    <string name="voted">በአስተካከል ድምጽ ተሰጠ</string>
+    <string name="vote_failed">ድምጽ መመዝገብ አልተቻለም። እንደግ ይሞክሩ።</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">በመላክ ላይ...</string>
+    <string name="add_comment">አስተያየም አክልር</string>
+    <string name="title_activity_compose">ይጻፉ</string>
+    <string name="send">ላክ</string>
+    <string name="original_content">የመጀመሪያ ይዘት</string>
+    <string name="quote">ማንቀስ</string>
+    <string name="formatting_guidelines">HN የቅርጸት መመሪያዎች</string>
+    <string name="confirm_save_draft">ሕትሙን አስቀምጥ?</string>
+    <string name="create_account">መለያያ ፍጠር</string>
+    <string name="comment_failed">አስተያየም መላክ አልተቻለም</string>
+    <string name="comment_successful">አስተያየም ተጨምረዋል። ለማየት እንደግ ይሞክሩ።</string>
+    <string name="confirm_no_waiting">ሳይጠብቁ ይውጡ?</string>
+    <string name="rate_app">መተግበሪያውን ደርግ</string>
+    <string name="or">ወይም</string>
+    <string name="leave_feedback">አስተያየም ይተው</string>
+    <string name="no_playstore">Play Store መተግበሪያ አልተገኘም</string>
+    <string name="submit_content_hint">URL ወይም ጽሑፍ</string>
+    <string name="title_activity_submit">ወደ HN ላክ</string>
+    <string name="url_text_required">URL ወይም ጽሑፍ ያስፈልጋል</string>
+    <string name="submit_failed">መላክ አልተቻለም። እንደግ ይሞክሩ።</string>
+    <string name="submit_successful">በአስተካከል ተልኳል</string>
+    <string name="confirm_no_submit">ሳይላክ ይውጡ?</string>
+    <string name="submit_note">ለውይን የጥያቄ ለመላክ ጽሑፍ ያስገቡ፣ ወይም ለማገናኘት ለመላክ URL። ከሌላ መተግበሪያዎች አገናኘቶችን ቀጥታ ማካፍል ይችላሉ</string>
+    <string name="confirm_submit_url">እንደ አገናኘት ላክ?</string>
+    <string name="confirm_submit_question">እንደ ጥያቄ ላክ?</string>
+    <string name="submission_guidelines">የማስረያ መመሪያዎች</string>
+    <string name="title_activity_user">የእኔ መገለጽ</string>
+    <string name="user_info">ተፈጠረ: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s ማስረያ</item>
+        <item quantity="one">%1$s ማስረያ</item>
+        <item quantity="other">%1$s ማስረያዎች</item>
+    </plurals>
+    <string name="view_story">ታሪኮ ይመልከቱ</string>
+    <string name="user_failed">ተጠቀሚን መጫን አልችልም። እንደግ ይሞክሩ።</string>
+    <string name="dead_prefix">[ሙት]</string>
+    <string name="title_activity_thread_preview">የክፍል ቅድመት</string>
+    <string name="view_thread">ክፍል ይመልከቱ</string>
+    <string name="view_user">ተጠቀሚን ይመልከቱ</string>
+    <string name="more">ተጨማሪ</string>
+    <string name="logout">ውጣ</string>
+    <string name="offline">ኦፍላይን</string>
+    <string name="offline_notice">አሁን ኦፍላይን ነዎት</string>
+    <string name="download_in_progress">ውርድ በሂደት ላይ ነው</string>
+    <string name="love_it">ይህን አወዳለሁ!</string>
+    <string name="display_options">የአሳይ አማራጮች</string>
+    <string name="pull_up_hint">ለተጨማሪ ወደ ላይ ይጎት</string>
+    <string name="find_in_page">በገጽ ውስጥ ፈልግ</string>
+    <string name="no_matches">ማጣቀሻዎች አልተገኙም</string>
+    <string name="back">ተመለስ</string>
+    <string name="forward">ቀጣሚ</string>
+    <string name="zoom_out">አንቀል</string>
+    <string name="zoom_in">አራፍ</string>
+    <string name="refresh">እንደግ አስጀምር</string>
+    <string name="exit_fullscreen">ውጣ</string>
+    <string name="next">ቀጣሚ</string>
+    <string name="list_display_options">የዝርዝር አሳይ አማራጮች</string>
+    <string name="last_screen">የመጨረሻ የተጠቀም ስክር</string>
+    <string name="widget_options">የዊጄት አማራጮች</string>
+    <string name="item_exist">ተመሳሳይ ታሪኮ አስቀድሚው ነው</string>
+    <string name="hn_link">Hacker News አገናኘት</string>
+    <string name="article_link">የአርቲክል አገናኘት</string>
+    <string name="hint_drag">ለመቀየር ይጎት</string>
+    <string name="hint_nav_short">ለመራመር አርንብር \u2191 \u2193 \u2192 \u2190\nለመቀየር ረጅም ይጫኑ</string>
+    <string name="konami">ኮናሚ ኮድን አግኝኋለሁ! 5 ኮከቦች ይስጡኝ?</string>
+    <string name="end_of_thread">የክፍል መጨረሻ</string>
+    <string name="save_draft">ሕትሙን አስቀምጥ</string>
+    <string name="discard_draft">ሕትሙን አስወጣ</string>
+    <string name="clear_drafts">ሁሉም ሕትሞች አጽዳፍ</string>
+    <string name="more_sections">ተጨማሪ ክፍሎች</string>
+    <string name="list">ዝርዝር</string>
+    <string name="delete">አጽዳፍ</string>
+    <string name="full_text">ሙሉ ጽሑፍ</string>
+    <string name="empty_text">[ይህ ታሪኮ ይዘት የለም]</string>
+    <string name="none">ምንም</string>
+    <string name="hint_update">መተግበሪያዎ አሁን የተዘመነ ነው!</string>
+    <string name="export_saved_stories">የተቀመጡ ታሪኮች ወደ ውጪ ላክ</string>
+    <string name="export_notification">ወደ ፋይል ተቀምጧል። ለአማራጮች አንብር።</string>
+    <string name="share_file">ፋይል ካፍሉ</string>
+    <string name="privacy_policy">የግላጽነት ፖሊሲ</string>
+    <string name="notification_channel_downloads">ውርድች</string>
+    <string name="reply">ምላሽ</string>
+</resources>

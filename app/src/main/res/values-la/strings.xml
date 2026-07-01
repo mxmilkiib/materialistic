@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">Configurationes</string>
+    <string name="title_activity_list">Fabulae Principales</string>
+    <string name="title_activity_best">Fabulae Optimae</string>
+    <string name="title_activity_item">Commentarii</string>
+    <string name="title_activity_release">Quid Novum</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">Aperire loculum</string>
+    <string name="close_drawer">Claudere loculum</string>
+    <string name="view_in_browser">Videre in navigatro externo</string>
+    <string name="share">Communicare</string>
+    <string name="title_activity_about">De</string>
+    <string name="license_title">Licentia</string>
+    <string name="third_party_licenses_title">Licentiae Tertii</string>
+    <string name="developer_info_title">Informatio Programmatoris</string>
+    <string name="application_info_title">Informatio Applicationis</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>Versio</b> %1$s<br>
+            <b>Aedificatio</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>Aedificatum</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> est furca Materialistic a Ha Duy Trung.<br><br>
+            <b>Mutationes:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Instrumentum modernum<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Novi themata<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Violaceus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Oceanus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Rosa<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Monokai<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Nord<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Modus compactus cum fontibus minoribus et spatio arctiore<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Novi fontes<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Loculum navigationis planatum, omnes sectiones in radice<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Spatium arctius per totum<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Lumen overscroll transparente<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Supportum installationis debug secundum<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">Bibliothecae &amp; Recursos</string>
+    <string name="title_activity_favorite">Fabulae Servatae</string>
+    <string name="saved">Servatum %1$s ante</string>
+    <string name="toast_saved">Fabula servata</string>
+    <string name="clear_all">Omnia delere</string>
+    <string name="toast_removed">Fabula non servata</string>
+    <string name="no_saved_stories">Nihil fabularum servatarum adhuc</string>
+    <string name="no_comments">Adhuc quietum hic</string>
+    <string name="confirm_clear">Omnis fabulae servatae delere?</string>
+    <string name="export">Exportare</string>
+    <string name="clear_selected">Selecta delere</string>
+    <string name="confirm_clear_selected">Selectas fabulas servatas delere?</string>
+    <string name="search">Quaerere</string>
+    <string name="hint_search_saved_stories">Quaerere fabulas servatas</string>
+    <string name="no_stories_search">Non potest invenire quod quaeris</string>
+    <string name="display">Display</string>
+    <string name="pref_external_title">Utere navigatro externo</string>
+    <string name="pref_external_summary">Legere articulos in navigatro externo</string>
+    <string name="pref_color_code_title">Codex coloris</string>
+    <string name="pref_color_code_opacity_title">Opacitas codicis coloris</string>
+    <string name="pref_highlight_updated_title">Fabulas actualizatas notare</string>
+    <string name="pref_highlight_updated_summary">Monstrare mutationes ab ultima renovatione</string>
+    <string name="pref_custom_tab_title">Utere tabulis custom</string>
+    <string name="pref_custom_tab_summary">Aperire tabulam navigatri potius quam navigatrum plenum</string>
+    <string name="pref_story_display_title">Apertura default</string>
+    <string name="pref_theme_title">Thema</string>
+    <string name="pref_app_icon_title">Stilus iconis applicationis</string>
+    <string name="app_icon_default">Aurantiacus (default)</string>
+    <string name="app_icon_purple">Violaceus</string>
+    <string name="app_icon_green">Viridis</string>
+    <string name="app_icon_blue">Caeruleus</string>
+    <string name="app_icon_red">Ruber</string>
+    <string name="app_icon_teal">Teal</string>
+    <string name="app_icon_pink">Roseus</string>
+    <string name="app_icon_indigo">Indicus</string>
+    <string name="pref_daynight_title">Modus dies-noctis automaticus</string>
+    <string name="pref_search_sort_title">Ordinare per</string>
+    <string name="pref_search_sort_value_recent">recentem</string>
+    <string name="pref_search_sort_value_default">default</string>
+    <string name="pref_text_size_title">Magnitudo textus</string>
+    <string name="pref_font_title">Font</string>
+    <string name="pref_comment_display_title">Filum</string>
+    <string name="pref_max_lines_title">Commentarius longus</string>
+    <string name="pref_multi_window_title">Modus multifenestrae</string>
+    <string name="pref_multi_window_summary">Quam fenestram aperire fabulam (Android 7+)</string>
+    <string name="pref_multi_window_none">Eadem</string>
+    <string name="pref_multi_window_one">Alia</string>
+    <string name="pref_navigation_title">Navigatio in screen</string>
+    <string name="pref_navigation_vibrate_title">Vibrare in tactu</string>
+    <string name="pref_lazy_load_title">Contentum onerare tarde</string>
+    <string name="pref_lazy_load_summary">Contentum onerare solum cum ad tabulam eius mutas</string>
+    <string name="pref_saved_item_sync_title">Permittere accessum offline</string>
+    <string name="pref_saved_item_sync_summary">Contentum downloadare cum fabulam servas</string>
+    <string name="pref_offline_data_title">Quando downloadare</string>
+    <string name="pref_offline_comments_title">Commentarios downloadare</string>
+    <string name="pref_offline_article_title">Articulum downloadare</string>
+    <string name="pref_offline_readability_title">Legibilitatem downloadare</string>
+    <string name="pref_offline_data_wifi">Wifi solum</string>
+    <string name="pref_offline_data_always">Semper</string>
+    <string name="pref_offline_notification_title">Monstrare progressum</string>
+    <string name="pref_offline_notification_summary">Monstrare notificationem pro progressu download</string>
+    <string name="pref_launch_screen_title">Screen default</string>
+    <string name="pref_volume_title">Utere navigatione voluminis</string>
+    <string name="pref_volume_summary">Scrolare sursum/deorsum cum clavibus voluminis</string>
+    <string name="pref_ad_block_title">Bloccare nuntios</string>
+    <string name="pref_ad_block_summary">Permittere simplicem bloccatorem nuntiorum pro navigatro interno</string>
+    <string name="pref_line_height_title">Spatium linearum</string>
+    <string name="pref_list_item_view_title">Monstrare ut chartas</string>
+    <string name="pref_list_compact_title">Spatium compactum listae</string>
+    <string name="pref_list_compact_summary">Lineae arctiores et columna punctorum angustior pro titulis latioribus</string>
+    <string name="pref_thread_indicator_title">Indicator filorum</string>
+    <string name="pref_widget_section_title">Sectio</string>
+    <string name="pref_widget_query_title">Filtrare per quaestionem (optional)</string>
+    <string name="pref_widget_frequency_title">Frequentia renovationis</string>
+    <string name="pref_auto_viewed_title">Automatice notare ut visum</string>
+    <string name="pref_auto_viewed_summary">Notare fabulas ut visas cum sursum scrolas</string>
+    <string name="pref_smooth_scroll_title">Animare navigationem</string>
+    <string name="pref_smooth_scroll_summary">Disactivare ut meliorem accuratiam scrol</string>
+    <string name="pref_list_swipe_left_title">Sweep sinistram ad</string>
+    <string name="pref_list_swipe_right_title">Sweep dexteram ad</string>
+    <string name="connection_error">Non potest conecti ad Hacker News. Inspecta connectionem tuam vel conare iterum.</string>
+    <string name="select_story">Selige fabulam ut videas</string>
+    <string name="download_external">Videre in alia applicatione</string>
+    <string name="try_me">Long press/sweep unum ut servas pro posterius!</string>
+    <string name="title_activity_jobs">Opera</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">Fabulae Novae</string>
+    <string name="title_activity_search">Quaerere HN</string>
+    <string name="clear_search_history">Delere historiam quaestionis</string>
+    <string name="clear_search_history_confirm">Delere historiam quaestionis?</string>
+    <string name="undo">Annullare</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">Commentarii</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s Commentarius</item>
+        <item quantity="one">%1$s Commentarius</item>
+        <item quantity="other">%1$s Commentarii</item>
+    </plurals>
+    <string name="article">Articulus</string>
+    <string name="reset_settings">Reponere omnes configurationes</string>
+    <string name="reset_settings_confirm">Reponere omnes praefationes tuas ad defaults applicationis?</string>
+    <string name="last_updated">Ultima actualizatio %1$s</string>
+    <string name="feedback">Feedback</string>
+    <string name="send_feedback">Mittere Feedback</string>
+    <string name="title_hint">Titulus</string>
+    <string name="comment_hint">Commentarius</string>
+    <string name="feedback_note">
+        <![CDATA[
+            Feedback tuum fiet publicum ut <a href="https://github.com/mxmilkiib/material-hack/issues">Material Hack Github issue</a>.
+        ]]>
+    </string>
+    <string name="title_required">Titulus requiritur</string>
+    <string name="comment_required">Commentarius requiritur</string>
+    <string name="feedback_sent">Feedback missum. Gratias!</string>
+    <string name="feedback_failed">Missum non successit, conare iterum</string>
+    <string name="chooser_title">Aperire cum</string>
+    <string name="title_activity_popular">Recapere</string>
+    <string name="range">Rangus</string>
+    <string name="popular_range_last_24h">Ultimas 24h</string>
+    <string name="popular_range_past_week">Septimanem praeteritam</string>
+    <string name="popular_range_past_month">Mensem praeteritum</string>
+    <string name="popular_range_past_year">Annum praeteritum</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s fabula nova</item>
+        <item quantity="one">%1$s fabula nova</item>
+        <item quantity="other">%1$s fabulae novae</item>
+    </plurals>
+    <string name="show_me">Monstra mihi</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">Monstrans %1$s fabulam novam</item>
+        <item quantity="one">Monstrans %1$s fabulam novam</item>
+        <item quantity="other">Monstrans %1$s fabulas novas</item>
+    </plurals>
+    <string name="show_all">Monstrare omnia</string>
+    <string name="whats_this">Quid est hoc?</string>
+    <string name="got_it">Intellexi</string>
+    <string name="help_new_story">Fabula nova ab ultima renovatione</string>
+    <string name="help_promoted_story">Fabula promota ab ultima renovatione</string>
+    <string name="help_new_comments">Fabula cum commentariis novis ab ultima renovatione</string>
+    <string name="help_lazy_load">Cum oneratione tardi activata, solum tabula default praeferita onerabitur cum res primum aperitur.\n\nSi in lenta connectione es vel lagging invenis, hoc activare iuvare potest.</string>
+    <string name="help_volume_up">Pressa volume up ut scrolas sursum</string>
+    <string name="help_long_volume_up">Long press volume up ut scrolas velociter ad summum</string>
+    <string name="help_volume_down">Pressa volume down ut scrolas deorsum</string>
+    <string name="help_navigate">Monstrare button navigationem fluitantem quod respondet ad gesta sweep ut naviget filos commentariorum innestatos.</string>
+    <string name="help_navigate_up">Sweep \u2191: ire ad commentarium praecedentem</string>
+    <string name="help_navigate_down">Sweep \u2193: ire ad commentarium sequentem</string>
+    <string name="help_navigate_right">Sweep \u2192: expandere &amp; ire ad 1st responsum</string>
+    <string name="help_navigate_left">Sweep \u2190: redire ad parentem</string>
+    <string name="help_navigate_move">Long press ut trahas button navigationem ad novam positionem</string>
+    <string name="readability">Legibilitas</string>
+    <string name="text_size_extra_small">Extra parvum</string>
+    <string name="text_size_small">Parvum</string>
+    <string name="text_size_medium">Medium</string>
+    <string name="text_size_large">Magnum</string>
+    <string name="text_size_extra_large">Extra magnum</string>
+    <string name="readability_failed">Non potest articulum interpretari</string>
+    <string name="theme_light">Lumen</string>
+    <string name="theme_dark">Tenebrae</string>
+    <string name="theme_black">Nigrum</string>
+    <string name="theme_sepia">Sepia</string>
+    <string name="theme_green">Viridis</string>
+    <string name="theme_transparent">Transparente</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">Violaceus</string>
+    <string name="theme_ocean">Oceanus</string>
+    <string name="theme_rose">Rosa</string>
+    <string name="theme_monokai">Monokai</string>
+    <string name="theme_nord">Nord</string>
+    <string name="theme_crimson">Crimson</string>
+    <string name="theme_forest">Silva</string>
+    <string name="theme_midnight">Media nox</string>
+    <string name="theme_sand">Arena</string>
+    <string name="theme_dracula">Dracula</string>
+    <string name="theme_darkorange">Aurantiacus tenebricus</string>
+    <string name="comment_display_multiple">Plures paginae</string>
+    <string name="comment_display_single">Pagina singula - expandere automatice</string>
+    <string name="comment_display_collapsed">Pagina singula - collapsa</string>
+    <string name="story_display_article">Articulus</string>
+    <string name="story_display_comments">Commentarii</string>
+    <string name="search_sort_recent">Plus recentem</string>
+    <string name="search_sort_popularity">Popularitas</string>
+    <string name="story_display_readability">Legibilitas</string>
+    <string name="font_options">Optiones fontis</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">Legere omnes %1$d lineas</string>
+    <string name="comment_max_lines_3">Max 3 lineas</string>
+    <string name="comment_max_lines_4">Max 4 lineas</string>
+    <string name="comment_max_lines_5">Max 5 lineas</string>
+    <string name="comment_max_lines_all">Contentum plenum</string>
+    <string name="line_height_compact">Compactum</string>
+    <string name="line_height_normal">Normale</string>
+    <string name="line_height_cozy">Cozy</string>
+    <string name="line_height_comfortable">Comfortable</string>
+    <string name="frequency_3_hours">3 horas</string>
+    <string name="frequency_6_hours">6 horas</string>
+    <string name="frequency_12_hours">12 horas</string>
+    <string name="frequency_1_day">1 diem</string>
+    <string name="file_not_supported">Typus contenti non supportatus</string>
+    <string name="username_hint">Nomen usoris</string>
+    <string name="password_hint">Tessera</string>
+    <string name="login">Login</string>
+    <string name="title_activity_login">Login ad Hacker News</string>
+    <string name="username_required">Nomen usoris requiritur</string>
+    <string name="password_required">Tessera requiritur</string>
+    <string name="login_failed">Login/creare accountum non successit, conare iterum</string>
+    <string name="welcome">Salve %1$s!</string>
+    <string name="logout_confirm">Visne logout?</string>
+    <string name="choose_account">Elige accountum</string>
+    <string name="add_account">Addere</string>
+    <string name="remove_account">Removere</string>
+    <string name="login_note">Credentiales tuae servabuntur secure sub Settings / Accounts dispositi tui</string>
+    <string name="save">Servare</string>
+    <string name="unsave">Non servare</string>
+    <string name="re_enter_password">Re-ingressa tessera tua</string>
+    <string name="vote_up">Votum sursum</string>
+    <string name="voted">Votum successit</string>
+    <string name="vote_failed">Non potest votum recordare. Conare iterum.</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">Mittens...</string>
+    <string name="add_comment">Addere commentarium</string>
+    <string name="title_activity_compose">Componere</string>
+    <string name="send">Mittere</string>
+    <string name="original_content">Contentum originale</string>
+    <string name="quote">Citare</string>
+    <string name="formatting_guidelines">Lineamenta formatting HN</string>
+    <string name="confirm_save_draft">Servare chartam?</string>
+    <string name="create_account">Creare accountum</string>
+    <string name="comment_failed">Non potest commentarium mittere</string>
+    <string name="comment_successful">Commentarium additum. Refice ut videas.</string>
+    <string name="confirm_no_waiting">Exire sine expectando?</string>
+    <string name="rate_app">Rate applicationem</string>
+    <string name="or">vel</string>
+    <string name="leave_feedback">Relinque feedback</string>
+    <string name="no_playstore">Play Store app non inventum</string>
+    <string name="submit_content_hint">URL vel textus</string>
+    <string name="title_activity_submit">Submittere ad HN</string>
+    <string name="url_text_required">URL vel textus requiritur</string>
+    <string name="submit_failed">Submittere non successit. Conare iterum.</string>
+    <string name="submit_successful">Submitte successit</string>
+    <string name="confirm_no_submit">Exire sine submittendo?</string>
+    <string name="submit_note">Ingredere textum ut quaestionem pro disputatione submittas, vel URL ut ligamentum submittas. Etiam potes ligamenta directe ex aliis applicationibus communicare</string>
+    <string name="confirm_submit_url">Submittere ut ligamentum?</string>
+    <string name="confirm_submit_question">Submittere ut quaestionem?</string>
+    <string name="submission_guidelines">Lineamenta submissionis</string>
+    <string name="title_activity_user">Meus Profile</string>
+    <string name="user_info">Creatum: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s submissio</item>
+        <item quantity="one">%1$s submissio</item>
+        <item quantity="other">%1$s submissiones</item>
+    </plurals>
+    <string name="view_story">Videre fabulam</string>
+    <string name="user_failed">Non potest usorem onerare. Conare iterum.</string>
+    <string name="dead_prefix">[mortuum]</string>
+    <string name="title_activity_thread_preview">Praevisio Filorum</string>
+    <string name="view_thread">Videre filum</string>
+    <string name="view_user">Videre usorem</string>
+    <string name="more">Plus</string>
+    <string name="logout">Logout</string>
+    <string name="offline">Offline</string>
+    <string name="offline_notice">Nunc es offline</string>
+    <string name="download_in_progress">Download in progressu</string>
+    <string name="love_it">Amo hoc!</string>
+    <string name="display_options">Optiones display</string>
+    <string name="pull_up_hint">Trah sursum pro plus</string>
+    <string name="find_in_page">Invenire in pagina</string>
+    <string name="no_matches">Nulla inventa</string>
+    <string name="back">Retro</string>
+    <string name="forward">Prorsus</string>
+    <string name="zoom_out">Zoom out</string>
+    <string name="zoom_in">Zoom in</string>
+    <string name="refresh">Reficere</string>
+    <string name="exit_fullscreen">Exire</string>
+    <string name="next">Sequens</string>
+    <string name="list_display_options">Optiones display listae</string>
+    <string name="last_screen">Ultima screen usata</string>
+    <string name="widget_options">Optiones widget</string>
+    <string name="item_exist">Similis fabula iam submissa est</string>
+    <string name="hn_link">Ligamentum Hacker News</string>
+    <string name="article_link">Ligamentum articuli</string>
+    <string name="hint_drag">Trahe ut reponas</string>
+    <string name="hint_nav_short">Sweep \u2191 \u2193 \u2192 \u2190 ut naviges\nLong press ut reponas</string>
+    <string name="konami">Consecutus es codicem Konami! Da mihi 5 stellas?</string>
+    <string name="end_of_thread">Finis filorum</string>
+    <string name="save_draft">Servare chartam</string>
+    <string name="discard_draft">Discartare chartam</string>
+    <string name="clear_drafts">Delere omnes chartas</string>
+    <string name="more_sections">Plus sectiones</string>
+    <string name="list">List</string>
+    <string name="delete">Delere</string>
+    <string name="full_text">Textus plenus</string>
+    <string name="empty_text">[Haec fabula nullum contentum habet]</string>
+    <string name="none">Nullum</string>
+    <string name="hint_update">App tuum nuper actualizatum est!</string>
+    <string name="export_saved_stories">Exportare fabulas servatas</string>
+    <string name="export_notification">Servatum in file. Tappa pro optionibus.</string>
+    <string name="share_file">Communicare file</string>
+    <string name="privacy_policy">Politica Privatae</string>
+    <string name="notification_channel_downloads">Downloades</string>
+    <string name="reply">Responsum</string>
+</resources>
