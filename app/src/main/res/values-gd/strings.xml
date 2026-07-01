@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">Roghainnean</string>
+    <string name="title_activity_list">Sgeulachdan Mòr</string>
+    <string name="title_activity_best">Sgeulachdan As Fheàrr</string>
+    <string name="title_activity_item">Beachdan</string>
+    <string name="title_activity_release">Dè Ùr</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">Fosgail an draoidh</string>
+    <string name="close_drawer">Dùin an draoidh</string>
+    <string name="view_in_browser">Seall ann am brabhsair eile</string>
+    <string name="share">Co-roinn</string>
+    <string name="title_activity_about">Mu dheidhinn</string>
+    <string name="license_title">Ceadachas</string>
+    <string name="third_party_licenses_title">Ceadachasan Treas Phàrtaidh</string>
+    <string name="developer_info_title">Fiosrachadh Luchd-Leasachaidh</string>
+    <string name="application_info_title">Fiosrachadh Aplacaide</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>Tionndadh</b> %1$s<br>
+            <b>Togail</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>Air a thogail</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> e fork de Materialistic le Ha Duy Trung.<br><br>
+            <b>ATHARRACHAIDEAN:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Toolchain ùrachadh<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Ùr chuspairean<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Violet<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Ocean<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Rose<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Monokai<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Nord<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Modh liosta compact le clòichean beaga agus beàrnan nas slaodaiche<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Clòichean ùra<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Draoidh seòlaidh air a shìneadh, gach earrann ann an root<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Beàrnan nas slaodaiche air feadh na h-aplacaide<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Glow overscroll so-dheàrsach<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Taic stàladh debug còmhla ri càch<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">Leabhraichean &amp; Goireasan</string>
+    <string name="title_activity_favorite">Sgeulachdan Air an Sàbhaladh</string>
+    <string name="saved">Air an sàbhaladh %1$s air ais</string>
+    <string name="toast_saved">Sgeulachd air an sàbhaladh</string>
+    <string name="clear_all">Falamhaich a h-uile</string>
+    <string name="toast_removed">Sgeulachd air a thoirt air falbh</string>
+    <string name="no_saved_stories">Chan eil sgeulachdan air an sàbhaladh fhathast</string>
+    <string name="no_comments">Tha e rèidh fhathast</string>
+    <string name="confirm_clear">Falamhaich a h-uile sgeulachd air an sàbhaladh?</string>
+    <string name="export">Às-phortaich</string>
+    <string name="clear_selected">Falamhaich na thagh thu</string>
+    <string name="confirm_clear_selected">Falamhaich na sgeulachdan air an sàbhaladh a thagh thu?</string>
+    <string name="search">Lorg</string>
+    <string name="hint_search_saved_stories">Lorg sgeulachdan air an sàbhaladh</string>
+    <string name="no_stories_search">Cha do lorg mi dhut na bha thu a\' sireadh</string>
+    <string name="display">Sealladh</string>
+    <string name="pref_external_title">Cleachd brabhsair eile</string>
+    <string name="pref_external_summary">Leugh artaigilean ann am brabhsair eile</string>
+    <string name="pref_color_code_title">Còd datha</string>
+    <string name="pref_color_code_opacity_title">Trìd-shoilleireachadh còd datha</string>
+    <string name="pref_highlight_updated_title">Soillsich sgeulachdan air an ùrachadh</string>
+    <string name="pref_highlight_updated_summary">Seall atharraichean on ath-nuadhachadh mu dheireadh</string>
+    <string name="pref_custom_tab_title">Cleachd tabaichean gnàthaichte</string>
+    <string name="pref_custom_tab_summary">Fosgail taba brabhsair an àite brabhsair làn</string>
+    <string name="pref_story_display_title">Fosgail bunaiteach</string>
+    <string name="pref_theme_title">Cuspair</string>
+    <string name="pref_app_icon_title">Stoidhle ìomhaigh aplacaid</string>
+    <string name="app_icon_default">Orains (bunaiteach)</string>
+    <string name="app_icon_purple">Purpaidh</string>
+    <string name="app_icon_green">Uaine</string>
+    <string name="app_icon_blue">Gorm</string>
+    <string name="app_icon_red">Dearg</string>
+    <string name="app_icon_teal">Teal</string>
+    <string name="app_icon_pink">Pinc</string>
+    <string name="app_icon_indigo">Indigo</string>
+    <string name="pref_daynight_title">Modh là/oidhche fèin-obrachail</string>
+    <string name="pref_search_sort_title">Seòrsaich a-rèir</string>
+    <string name="pref_search_sort_value_recent">as ùire</string>
+    <string name="pref_search_sort_value_default">bunaiteach</string>
+    <string name="pref_text_size_title">Meud teacsa</string>
+    <string name="pref_font_title">Clò</string>
+    <string name="pref_comment_display_title">Snàithlean</string>
+    <string name="pref_max_lines_title">Beachd fada</string>
+    <string name="pref_multi_window_title">Modh ioma-uinneag</string>
+    <string name="pref_multi_window_summary">Dè uinneag fosgail sgeulachd (Android 7+)</string>
+    <string name="pref_multi_window_none">Ceàrna</string>
+    <string name="pref_multi_window_one">Eile</string>
+    <string name="pref_navigation_title">Seòladh air sgrìn</string>
+    <string name="pref_navigation_vibrate_title">Crath air bean</string>
+    <string name="pref_lazy_load_title">Luchdadh lazy de susbaint</string>
+    <string name="pref_lazy_load_summary">Luchdaich susbaint nuair a thèid thu gu taba aige a-mach</string>
+    <string name="pref_saved_item_sync_title">Cuir an comas eadar-lìn dheth</string>
+    <string name="pref_saved_item_sync_summary">Luchdaich susbaint nuair a shàbhaileas tu sgeulachd</string>
+    <string name="pref_offline_data_title">Cuin a luchdaicheas tu</string>
+    <string name="pref_offline_comments_title">Luchdaich beachdan</string>
+    <string name="pref_offline_article_title">Luchdaich artaigeal</string>
+    <string name="pref_offline_readability_title">Luchdaich so-leughaidh</string>
+    <string name="pref_offline_data_wifi">Wifi a-mhàin</string>
+    <string name="pref_offline_data_always">An-còmhnaidh</string>
+    <string name="pref_offline_notification_title">Seall adhartas</string>
+    <string name="pref_offline_notification_summary">Seall brath airson adhartas luchdaidh</string>
+    <string name="pref_launch_screen_title">Sgrìn bunaiteach</string>
+    <string name="pref_volume_title">Cleachd seòladh meudachd</string>
+    <string name="pref_volume_summary">Scrollaich suas/sìos le putan meudachd</string>
+    <string name="pref_ad_block_title">Bac sanasan</string>
+    <string name="pref_ad_block_summary">Cuir an comas bacair sanasan sìmplidh airson brabhsair inntearnail</string>
+    <string name="pref_line_height_title">Beàrn loidhne</string>
+    <string name="pref_list_item_view_title">Seall mar chairtean</string>
+    <string name="pref_list_compact_title">Beàrn liosta compact</string>
+    <string name="pref_list_compact_summary">Ròghan nas teanna agus colbh sgòrean nas cumhaiche airson tiotalan nas leithna</string>
+    <string name="pref_thread_indicator_title">Taisbeanair snàithlean</string>
+    <string name="pref_widget_section_title">Earrann</string>
+    <string name="pref_widget_query_title">Criathra a-rèir ceist (roghainneil)</string>
+    <string name="pref_widget_frequency_title">Freqeans ùrachaidh</string>
+    <string name="pref_auto_viewed_title">Comharraich gu fèin-obrachail air chunnaic</string>
+    <string name="pref_auto_viewed_summary">Comharraich sgeulachdan air chunnaic nuair a swipe thu suas</string>
+    <string name="pref_smooth_scroll_title">Beòdhich seòladh</string>
+    <string name="pref_smooth_scroll_summary">Cuir dheth gus mheudachadh cruachd scrolla</string>
+    <string name="pref_list_swipe_left_title">Swipe gu clì gu</string>
+    <string name="pref_list_swipe_right_title">Swipe gu deas gu</string>
+    <string name="connection_error">Cha ghabh ceangal ri Hacker News. Thoir sùil air an ceanglachad agad no feuch ris a-rithist.</string>
+    <string name="select_story">Tagh sgeulachd gus a shealltainn</string>
+    <string name="download_external">Seall ann an aplacaid eile</string>
+    <string name="try_me">Long press/swipe fear gus a shàbhaladh airson an deireadh!</string>
+    <string name="title_activity_jobs">Obraichean</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">Sgeulachdan Ùra</string>
+    <string name="title_activity_search">Lorg HN</string>
+    <string name="clear_search_history">Falamhaich eachdraidh luirg</string>
+    <string name="clear_search_history_confirm">Falamhaich eachdraidh luirg?</string>
+    <string name="undo">Neo-dhèan</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">Beachdan</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s beachd</item>
+        <item quantity="one">%1$s beachd</item>
+        <item quantity="other">%1$s beachdan</item>
+    </plurals>
+    <string name="article">Artaigeal</string>
+    <string name="reset_settings">Ath-shuidhich a h-uile roghainn</string>
+    <string name="reset_settings_confirm">Ath-shuidhich na roghainnean gu bunaiteachan an aplacaid?</string>
+    <string name="last_updated">Air an ùrachadh mu dheireadh %1$s</string>
+    <string name="feedback">Beachd</string>
+    <string name="send_feedback">Cuir Beachd</string>
+    <string name="title_hint">Tiotal</string>
+    <string name="comment_hint">Beachd</string>
+    <string name="feedback_note">
+        <![CDATA[
+            Bidh do bheachd ga dhèanamh poblach mar <a href="https://github.com/mxmilkiib/material-hack/issues">cùise Github Material Hack</a>.
+        ]]>
+    </string>
+    <string name="title_required">Tha tiotal a dhìth</string>
+    <string name="comment_required">Tha beachd a dhìth</string>
+    <string name="feedback_sent">Beachd air a chur. Mòran taing!</string>
+    <string name="feedback_failed">Dh\'fhàillig leis an cur, feuch ris a-rithist</string>
+    <string name="chooser_title">Fosgail le</string>
+    <string name="title_activity_popular">Lorg Dhut</string>
+    <string name="range">Raon</string>
+    <string name="popular_range_last_24h">Na 24 uairean a dh\'aochas</string>
+    <string name="popular_range_past_week">An t-seachdain seo chaidh</string>
+    <string name="popular_range_past_month">Am mìos seo chaidh</string>
+    <string name="popular_range_past_year">Am bliadhna seo chaidh</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s sgeulachd ùr</item>
+        <item quantity="one">%1$s sgeulachd ùr</item>
+        <item quantity="other">%1$s sgeulachdan ùra</item>
+    </plurals>
+    <string name="show_me">Seall dhomh</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">A\' sealltainn %1$s sgeulachd ùr</item>
+        <item quantity="one">A\' sealltainn %1$s sgeulachd ùr</item>
+        <item quantity="other">A\' sealltainn %1$s sgeulachdan ùra</item>
+    </plurals>
+    <string name="show_all">Seall a h-uile</string>
+    <string name="whats_this">Dè tha seo?</string>
+    <string name="got_it">Tha mi a\' tuigsinn</string>
+    <string name="help_new_story">Sgeulachd ùr on ath-nuadhachadh mu dheireadh</string>
+    <string name="help_promoted_story">Sgeulachd air a bhrosnachadh on ath-nuadhachadh mu dheireadh</string>
+    <string name="help_new_comments">Sgeulachd le beachdan ùra on ath-nuadhachadh mu dheireadh</string>
+    <string name="help_lazy_load">Le luchdadh lazy air, cha bhèil ach an taba bunaiteach a tha thu ag iarraidh air a luchdadh nuair a dh\'fhosglas tu nì airson a\' chiad tur.\n\nMa tha thu air ceangal slaodach no tha thu a\' faighinn lag, dh\'fhaoidte gum bi seo na chuideachadh.</string>
+    <string name="help_volume_up">Brùth meudachd suas gus scrollaich suas</string>
+    <string name="help_long_volume_up">Long press meudachd suas gus scrollaich gu luath gu h-àrd</string>
+    <string name="help_volume_down">Brùth meudachd sìos gus scrollaich sìos</string>
+    <string name="help_navigate">Seall putan seòlaidh fleòdach a freagras ri gesta swipe gus seòladh snàithlean beachdan neadachadh.</string>
+    <string name="help_navigate_up">Swipe \u2191: tadhla dhan bheachd roimhe</string>
+    <string name="help_navigate_down">Swipe \u2193: tadhla dhan bheachd air fhàgail</string>
+    <string name="help_navigate_right">Swipe \u2192: leudaich &amp; tadhla dhan 1d fhreagairt</string>
+    <string name="help_navigate_left">Swipe \u2190: tadhla air ais dhan pàrant</string>
+    <string name="help_navigate_move">Long press gus dragadh putan seòlaidh gu ionad ùr</string>
+    <string name="readability">So-leughaidh</string>
+    <string name="text_size_extra_small">Beag glè mòr</string>
+    <string name="text_size_small">Beag</string>
+    <string name="text_size_medium">Meadhanach</string>
+    <string name="text_size_large">Mòr</string>
+    <string name="text_size_extra_large">Mòr glè mòr</string>
+    <string name="readability_failed">Cha ghabh artaigeal a pharsadh</string>
+    <string name="theme_light">Soilleir</string>
+    <string name="theme_dark">Dorcha</string>
+    <string name="theme_black">Dubh</string>
+    <string name="theme_sepia">Sepia</string>
+    <string name="theme_green">Uaine</string>
+    <string name="theme_transparent">So-dheàrsach</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">Purpaidh</string>
+    <string name="theme_ocean">Cuan</string>
+    <string name="theme_rose">Ròs</string>
+    <string name="theme_monokai">Monokai</string>
+    <string name="theme_nord">Nord</string>
+    <string name="theme_crimson">Crimson</string>
+    <string name="theme_forest">Coille</string>
+    <string name="theme_midnight">Meadhan-oidhche</string>
+    <string name="theme_sand">Gaineamh</string>
+    <string name="theme_dracula">Dracula</string>
+    <string name="theme_darkorange">Orains Dorcha</string>
+    <string name="comment_display_multiple">Ioma duilleag</string>
+    <string name="comment_display_single">Aon duilleag - leudachadh fèin-obrachail</string>
+    <string name="comment_display_collapsed">Aon duilleag - air a choilleachadh</string>
+    <string name="story_display_article">Artaigeal</string>
+    <string name="story_display_comments">Beachdan</string>
+    <string name="search_sort_recent">Nas ùire</string>
+    <string name="search_sort_popularity">Mòrachd</string>
+    <string name="story_display_readability">So-leughaidh</string>
+    <string name="font_options">Roghainnean clò</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">Leugh a h-uile %1$d loidhne</string>
+    <string name="comment_max_lines_3">Max 3 loidhne</string>
+    <string name="comment_max_lines_4">Max 4 loidhne</string>
+    <string name="comment_max_lines_5">Max 5 loidhne</string>
+    <string name="comment_max_lines_all">Susbaint làn</string>
+    <string name="line_height_compact">Compact</string>
+    <string name="line_height_normal">Àbhaisteach</string>
+    <string name="line_height_cozy">Cozy</string>
+    <string name="line_height_comfortable">Comfortable</string>
+    <string name="frequency_3_hours">3 uairean</string>
+    <string name="frequency_6_hours">6 uairean</string>
+    <string name="frequency_12_hours">12 uairean</string>
+    <string name="frequency_1_day">1 latha</string>
+    <string name="file_not_supported">Seòrsa susbaint chan eil taic air</string>
+    <string name="username_hint">Ainm cleachdaiche</string>
+    <string name="password_hint">Facal-faire</string>
+    <string name="login">Log a-steach</string>
+    <string name="title_activity_login">Log a-steach gu Hacker News</string>
+    <string name="username_required">Tha ainm cleachdaiche a dhìth</string>
+    <string name="password_required">Tha facal-faire a dhìth</string>
+    <string name="login_failed">Dh\'fhàillig le log a-steach/chruthachadh cunntas, feuch ris a-rithist</string>
+    <string name="welcome">Fàilte %1$s!</string>
+    <string name="logout_confirm">A bheil thu airson log a-mach?</string>
+    <string name="choose_account">Tagh cunntas</string>
+    <string name="add_account">Cuir ris</string>
+    <string name="remove_account">Thoir air falbh</string>
+    <string name="login_note">Bidh do dh\'fhaclan-faire air an stòr gu sàbhailte fo Roghainnean / Cunntasan an inneil agad</string>
+    <string name="save">Sàbhail</string>
+    <string name="unsave">Na sàbhail</string>
+    <string name="re_enter_password">Cuir an t-air facal-faire agad a-steach</string>
+    <string name="vote_up">Bhòt suas</string>
+    <string name="voted">Bhòt air a chur gu soirbheachail</string>
+    <string name="vote_failed">Dh\'fhàillig le bhòt. Feuch ris a-rithist.</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">A\' cur...</string>
+    <string name="add_comment">Cuir beachd ris</string>
+    <string name="title_activity_compose">Sgrìobh</string>
+    <string name="send">Cuir</string>
+    <string name="original_content">Susbaint tùsail</string>
+    <string name="quote">Iomradh</string>
+    <string name="formatting_guidelines">Leth-beachdan formatting HN</string>
+    <string name="confirm_save_draft">Sàbhail an dreach?</string>
+    <string name="create_account">Cruthaich cunntas</string>
+    <string name="comment_failed">Dh\'fhàillig le cur beachd</string>
+    <string name="comment_successful">Beachd air a chur ris. Ath-nuadhachadh gus a shealltainn.</string>
+    <string name="confirm_no_waiting">Fàg às gun feitheamh?</string>
+    <string name="rate_app">Rangachadh an aplacaid</string>
+    <string name="or">no</string>
+    <string name="leave_feedback">Fàg beachd</string>
+    <string name="no_playstore">Cha deach aplacaid Play Store a lorg</string>
+    <string name="submit_content_hint">URL no teacsa</string>
+    <string name="title_activity_submit">Cuir gu HN</string>
+    <string name="url_text_required">Tha URL no teacsa a dhìth</string>
+    <string name="submit_failed">Dh\'fhàillig le cur. Feuch ris a-rithist.</string>
+    <string name="submit_successful">Air a chur gu soirbheachail</string>
+    <string name="confirm_no_submit">Fàg às gun cur?</string>
+    <string name="submit_note">Cuir a-steach teacsa gus ceist a chuir airson deasbadh, no URL gus ceangal a chuir. Faodadh tu cuideachd ceangalan a cho-roinn gu dìreach bho aplacaidean eile</string>
+    <string name="confirm_submit_url">Cuir mar cheangal?</string>
+    <string name="confirm_submit_question">Cuir mar cheist?</string>
+    <string name="submission_guidelines">Leth-beachdan cur</string>
+    <string name="title_activity_user">Mo Phròifil</string>
+    <string name="user_info">Air a chruthachadh: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s cur</item>
+        <item quantity="one">%1$s cur</item>
+        <item quantity="other">%1$s curan</item>
+    </plurals>
+    <string name="view_story">Seall sgeulachd</string>
+    <string name="user_failed">Cha ghabh cleachdaiche a luchdadh. Feuch ris a-rithist.</string>
+    <string name="dead_prefix">[marbh]</string>
+    <string name="title_activity_thread_preview">Ro-shealladh Snàithlean</string>
+    <string name="view_thread">Seall snàithlean</string>
+    <string name="view_user">Seall cleachdaiche</string>
+    <string name="more">Barrachd</string>
+    <string name="logout">Log a-mach</string>
+    <string name="offline">Eadar-lìn dheth</string>
+    <string name="offline_notice">Tha tu eadar-lìn dheth an-dràsta</string>
+    <string name="download_in_progress">Luchdadh ann an dol</string>
+    <string name="love_it">Tha mi ga mholadh!</string>
+    <string name="display_options">Roghainnean seallaidh</string>
+    <string name="pull_up_hint">Tarraing suas airson barrachd</string>
+    <string name="find_in_page">Lorg ann an duilleag</string>
+    <string name="no_matches">Cha deach co-fhreagradh a lorg</string>
+    <string name="back">Air ais</string>
+    <string name="forward">Air adhart</string>
+    <string name="zoom_out">Sùm a-mach</string>
+    <string name="zoom_in">Sùm a-steach</string>
+    <string name="refresh">Ath-nuadhachadh</string>
+    <string name="exit_fullscreen">Fàg às</string>
+    <string name="next">Air adhart</string>
+    <string name="list_display_options">Roghainnean seallaidh liosta</string>
+    <string name="last_screen">An sgrìn air an deach a chleachdadh mu dheireadh</string>
+    <string name="widget_options">Roghainnean widget</string>
+    <string name="item_exist">Sgeulachd coltach air a chur mu dheireadh</string>
+    <string name="hn_link">Ceangal Hacker News</string>
+    <string name="article_link">Ceangal artaigeil</string>
+    <string name="hint_drag">Drag gus a reposition</string>
+    <string name="hint_nav_short">Swipe \u2191 \u2193 \u2192 \u2190 gus seòladh\nLong press gus a reposition</string>
+    <string name="konami">Fhuair thu an còd Konami! Thoir mi 5 rionnag?</string>
+    <string name="end_of_thread">Deireadh an t-snàithlean</string>
+    <string name="save_draft">Sàbhail an dreach</string>
+    <string name="discard_draft">Tilg air falbh an dreach</string>
+    <string name="clear_drafts">Falamhaich a h-uile dreach</string>
+    <string name="more_sections">Barrachd earrannan</string>
+    <string name="list">Liosta</string>
+    <string name="delete">Sguab às</string>
+    <string name="full_text">Teacsa làn</string>
+    <string name="empty_text">[Chan eil susbaint aig an sgeulachd seo]</string>
+    <string name="none">Chan eil gin</string>
+    <string name="hint_update">Tha an aplacaid agad air ùrachadh an-dràsta!</string>
+    <string name="export_saved_stories">Às-phortaich sgeulachdan air an sàbhaladh</string>
+    <string name="export_notification">Air a shàbhaladh gu faid. Tap airson roghainnean.</string>
+    <string name="share_file">Co-roinn faid</string>
+    <string name="privacy_policy">Poileasaidh Prìobhaideachd</string>
+    <string name="notification_channel_downloads">Luchdaidhean</string>
+    <string name="reply">Freagair</string>
+</resources>
