@@ -72,7 +72,7 @@
         android:layout_alignWithParentIfMissing="true"
         android:layout_alignTop="@id/source"
         android:layout_alignBottom="@+id/button_more"
-        android:layout_width="40dp"
+        android:layout_width="44dp"
         android:layout_height="wrap_content" />
 
     <include
@@ -81,7 +81,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@id/source"
         android:layout_alignBottom="@id/posted"
-        android:layout_width="40dp"
+        android:layout_width="44dp"
         android:layout_height="wrap_content"/>
 
     <LinearLayout
